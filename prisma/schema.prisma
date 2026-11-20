@@ -1,0 +1,232 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime @default(now())
+}
+
+model SiteSettings {
+  id               String   @id @default("singleton")
+  phone            String
+  phoneHref        String
+  fax              String
+  address          String
+  email            String
+  whatsappNumber   String   @default("")
+  whatsappMessage  String
+  years            Int
+  employees        Int
+  partners         Int
+  servicesCount    Int
+  heroVideoUrl     String   @default("")
+  heroVideoWebmUrl String   @default("")
+  heroPosterUrl    String
+  aboutImageUrl    String
+  lat              Float
+  lng              Float
+  hours            String
+  capital          String
+  foundedYear      Int
+  legalName        String
+  facebookUrl      String   @default("")
+  linkedinUrl      String   @default("")
+  instagramUrl     String   @default("")
+  metaTitle        String
+  metaDescription  String
+  milestones       Json
+  showLiveDot      Boolean  @default(false)
+  updatedAt        DateTime @updatedAt
+}
+
+model Milestone {
+  id       String  @id @default(cuid())
+  year     String
+  title    String
+  text     String  @db.Text
+  imageUrl String  @default("")
+  order    Int
+  isActive Boolean @default(true)
+}
+
+model Service {
+  id               String  @id @default(cuid())
+  slug             String  @unique
+  title            String
+  shortDescription String  @db.Text
+  content          String  @db.Text
+  imageUrl         String
+  icon             String
+  order            Int
+  isActive         Boolean @default(true)
+}
+
+model Company {
+  id         String  @id @default(cuid())
+  name       String
+  logoUrl    String
+  websiteUrl String  @default("")
+  order      Int
+  isActive   Boolean @default(true)
+}
+
+model GalleryImage {
+  id       String          @id @default(cuid())
+  url      String
+  alt      String
+  category GalleryCategory
+  order    Int
+  isActive Boolean         @default(true)
+}
+
+enum GalleryCategory {
+  FIELD
+  INSIDE
+}
+
+model MediaAsset {
+  id    String    @id @default(cuid())
+  key   String    @unique
+  url   String
+  type  MediaType
+  label String
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+}
+
+model ContactMessage {
+  id            String        @id @default(cuid())
+  name          String
+  email         String
+  phone         String        @default("")
+  company       String        @default("")
+  city          String        @default("")
+  service       String        @default("")
+  message       String        @db.Text
+  ipHash        String        @default("")
+  status        MessageStatus @default(NEW)
+  createdAt     DateTime      @default(now())
+  emailSent     Boolean       @default(false)
+  autoReplySent Boolean       @default(false)
+  whatsappSent  Boolean       @default(false)
+}
+
+model JobOpening {
+  id          String  @id @default(cuid())
+  title       String
+  location    String  @default("Jijel")
+  description String  @db.Text
+  isActive    Boolean @default(true)
+  order       Int
+}
+
+model JobApplication {
+  id        String        @id @default(cuid())
+  name      String
+  email     String
+  phone     String
+  position  String
+  message   String        @db.Text
+  cvUrl     String        @default("")
+  cvKey     String        @default("")
+  status    MessageStatus @default(NEW)
+  createdAt DateTime      @default(now())
+  emailSent Boolean       @default(false)
+}
+
+enum MessageStatus {
+  NEW
+  READ
+  ARCHIVED
+}
+
+model Visitor {
+  id        String     @id @default(cuid())
+  visitorId String     @unique
+  firstSeen DateTime   @default(now())
+  lastSeen  DateTime   @default(now())
+  country   String     @default("")
+  city      String     @default("")
+  device    String     @default("")
+  browser   String     @default("")
+  os        String     @default("")
+  consent   Boolean    @default(false)
+  pageViews PageView[]
+}
+
+model PageView {
+  id          String   @id @default(cuid())
+  visitorId   String?
+  visitor     Visitor? @relation(fields: [visitorId], references: [visitorId], onDelete: SetNull)
+  path        String
+  referrer    String   @default("")
+  utmSource   String   @default("")
+  utmMedium   String   @default("")
+  utmCampaign String   @default("")
+  country     String   @default("")
+  city        String   @default("")
+  device      String   @default("")
+  browser     String   @default("")
+  os          String   @default("")
+  sessionId   String   @default("")
+  duration    Int?
+  anonymous   Boolean  @default(false)
+  anonHash    String   @default("")
+  dayKey      String   @default("")
+  createdAt   DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([path])
+  @@index([visitorId])
+  @@index([dayKey])
+  @@index([anonHash])
+}
+
+model ConsentLog {
+  id            String   @id @default(cuid())
+  visitorId     String   @default("")
+  necessary     Boolean  @default(true)
+  analytics     Boolean
+  marketing     Boolean
+  policyVersion String
+  createdAt     DateTime @default(now())
+}
+
+model Event {
+  id        String   @id @default(cuid())
+  name      String
+  visitorId String   @default("")
+  path      String   @default("")
+  meta      Json?
+  createdAt DateTime @default(now())
+
+  @@index([name, createdAt])
+}
+
+model RateLimitHit {
+  id        String   @id @default(cuid())
+  key       String
+  createdAt DateTime @default(now())
+
+  @@index([key, createdAt])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  adminId   String   @default("")
+  action    String
+  entity    String   @default("")
+  createdAt DateTime @default(now())
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Photo escorte à remplacer">
+  <rect width="1200" height="800" fill="#0B1448"/>
+  <rect x="40" y="40" width="1120" height="720" fill="none" stroke="#C9A24B" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="600" y="360" text-anchor="middle" fill="#C9A24B" font-family="Georgia, serif" font-size="42">Escorte</text>
+  <text x="600" y="420" text-anchor="middle" fill="#F6F7FB" font-family="Arial, sans-serif" font-size="22">Photo en attente du client</text>
+</svg>

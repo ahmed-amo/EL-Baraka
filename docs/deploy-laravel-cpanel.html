@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Deploy Laravel from a private GitHub repository to cPanel</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm; }
+  :root {
+    --ink: #0f172a;
+    --muted: #475569;
+    --line: #e2e8f0;
+    --accent: #0b3d91;
+    --code-bg: #f1f5f9;
+    --card: #f8fafc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    font: 11pt/1.55 "Segoe UI", Calibri, Arial, sans-serif;
+  }
+  h1 {
+    margin: 0 0 8px;
+    font-size: 22pt;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--accent);
+  }
+  h2 {
+    margin: 22px 0 10px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+    font-size: 14pt;
+    color: var(--accent);
+    page-break-after: avoid;
+  }
+  h3 {
+    margin: 16px 0 8px;
+    font-size: 12pt;
+    page-break-after: avoid;
+  }
+  p, li { margin: 0 0 8px; }
+  .lead { color: var(--muted); font-size: 11.5pt; margin-bottom: 14px; }
+  .meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 14px 0 18px;
+    padding: 12px 14px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+  .meta div strong { display: block; font-size: 9.5pt; color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em; }
+  .meta div span { font-size: 10.5pt; color: var(--muted); }
+  ol, ul { padding-left: 1.25rem; }
+  li { page-break-inside: avoid; }
+  code, pre {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 9.5pt;
+  }
+  code {
+    background: var(--code-bg);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 10px 12px;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+    page-break-inside: avoid;
+  }
+  .note {
+    margin: 10px 0;
+    padding: 10px 12px;
+    border-left: 4px solid var(--accent);
+    background: #eff6ff;
+    border-radius: 0 8px 8px 0;
+    page-break-inside: avoid;
+  }
+  .warn {
+    border-left-color: #b45309;
+    background: #fff7ed;
+  }
+  .footer {
+    margin-top: 28px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 9.5pt;
+  }
+  .toc { margin: 0 0 8px; }
+  .toc li { margin-bottom: 4px; }
+</style>
+</head>
+<body>
+  <h1>Deploy Laravel from a private GitHub repository to cPanel</h1>
+  <p class="lead">
+    Deploy your Laravel application to the main domain <strong>elbarakaconseil.dz</strong>
+    using the existing cPanel account <strong>elbarakaconseil</strong>. Application code stays
+    outside the public web directory so <code>.env</code> and source files are not directly exposed.
+  </p>
+
+  <div class="meta">
+    <div><strong>GitHub</strong><span>Private repository — source code and version history</span></div>
+    <div><strong>cPanel</strong><span>Git Version Control — clone and update securely</span></div>
+    <div><strong>Laravel app</strong><span>Stored outside <code>public_html</code>, with PHP and Composer</span></div>
+    <div><strong>Domain</strong><span><code>elbarakaconseil.dz</code> serves Laravel’s public files and routes</span></div>
+  </div>
+
+  <p>
+    This uses cPanel’s Git deployment functionality, with SSH authentication for your private repository.
+  </p>
+
+  <h2>Before you start</h2>
+  <div class="note warn">
+    Hosting must support PHP, Composer, SSH, and your application’s database. Some shared hosts restrict these features.
+    Confirm Terminal, PHP, Git, and Composer work before continuing.
+  </div>
+
+  <h2>Step 1 — Check your cPanel hosting</h2>
+  <ol>
+    <li>Click <strong>Search Tools</strong> at the top right.</li>
+    <li>Search for <strong>Terminal</strong> and open it.</li>
+    <li>Run these commands one at a time:</li>
+  </ol>
+  <pre>whoami
+php -v
+git --version
+composer --version</pre>
+  <p><strong>Expected results</strong></p>
+  <ul>
+    <li><code>whoami</code> returns <code>elbarakaconseil</code>.</li>
+    <li>PHP shows a version supported by your Laravel application.</li>
+    <li>Git and Composer display their versions.</li>
+  </ul>
+  <p>
+    If Terminal is missing, or PHP, Git, or Composer isn’t available, contact your hosting provider.
+    Also search cPanel for <strong>Select PHP Version</strong> or <strong>MultiPHP Manager</strong> and confirm
+    the main domain uses a PHP version supported by your project’s <code>composer.json</code>.
+  </p>
+
+  <h2>Step 2 — Back up your existing website</h2>
+  <ol>
+    <li>Open <strong>Files → File Manager</strong>.</li>
+    <li>Open <code>public_html</code>.</li>
+    <li>If it contains an existing website, select its files and create a backup archive, or download a copy.</li>
+    <li>Do not delete or overwrite the existing website yet.</li>
+  </ol>
+  <p>Your main domain will normally use:</p>
+  <pre>/home/elbarakaconseil/public_html/</pre>
+  <p>Verify the domain’s actual document root before deploying.</p>
+
+  <h2>Step 3 — Give cPanel access to your private GitHub repository</h2>
+  <p>Because the repository is private, cPanel needs an SSH key authorized by GitHub.</p>
+
+  <h3>3.1 Generate an SSH key</h3>
+  <pre>mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+
+ssh-keygen -t ed25519 \
+  -C "cpanel-laravel-deploy" \
+  -f ~/.ssh/github_laravel</pre>
+  <p>When prompted for a passphrase, you can leave it empty by pressing Enter twice if your host permits it.</p>
+  <pre>chmod 600 ~/.ssh/github_laravel
+chmod 644 ~/.ssh/github_laravel.pub</pre>
+
+  <h3>3.2 Copy your public key</h3>
+  <pre>cat ~/.ssh/github_laravel.pub</pre>
+  <div class="note warn">
+    Copy the entire public key output. Never share the private key file <code>~/.ssh/github_laravel</code>.
+  </div>
+
+  <h3>3.3 Add the key to GitHub</h3>
+  <ol>
+    <li>Open your private repository on GitHub.</li>
+    <li>Go to <strong>Settings → Deploy keys</strong>.</li>
+    <li>Click <strong>Add deploy key</strong>.</li>
+    <li>Title it <code>cPanel Laravel Production</code>.</li>
+    <li>Paste the public key.</li>
+    <li>Leave <strong>Allow write access</strong> unchecked.</li>
+    <li>Click <strong>Add key</strong>.</li>
+  </ol>
+  <p>Read-only access is enough for cPanel to clone and pull.</p>
+
+  <h3>3.4 Test the connection</h3>
+  <pre>ssh -i ~/.ssh/github_laravel \
+  -o IdentitiesOnly=yes \
+  -T git@github.com</pre>
+  <p>
+    If prompted to confirm GitHub’s host authenticity, verify its fingerprint against GitHub’s documentation before accepting.
+    A successful connection typically identifies your GitHub username and notes that shell access is unavailable — that is normal.
+    If you get <code>Permission denied (publickey)</code>, check the deploy key and private key permissions.
+  </p>
+
+  <h2>Step 4 — Clone your repository into cPanel</h2>
+  <ol>
+    <li>Search for <strong>Git Version Control</strong>.</li>
+    <li>Click <strong>Create</strong>.</li>
+    <li>Enable <strong>Clone a Repository</strong> if shown.</li>
+    <li>Fill in the fields below, then click <strong>Create</strong>.</li>
+  </ol>
+  <p><strong>Clone URL</strong> (replace OWNER and REPOSITORY):</p>
+  <pre>git@github.com:OWNER/REPOSITORY.git</pre>
+  <p><strong>Repository Path</strong></p>
+  <pre>/home/elbarakaconseil/repositories/laravel-app</pre>
+  <p><strong>Repository Name</strong></p>
+  <pre>laravel-app</pre>
+  <div class="note warn">
+    The repository directory must stay separate from <code>public_html</code>. Do not clone the full Laravel application into the public web directory.
+  </div>
+
+  <h2>Step 5 — Install Laravel dependencies</h2>
+  <pre>cd /home/elbarakaconseil/repositories/laravel-app
+ls -la
+composer install --no-dev --optimize-autoloader</pre>
+  <p>
+    You should see <code>artisan</code>, <code>composer.json</code>, <code>app</code>, <code>bootstrap</code>, and <code>public</code>.
+    If the app has frontend assets, build them where Node.js is available and deploy the generated assets.
+    Enable any missing PHP extensions in cPanel if Composer reports them.
+  </p>
+
+  <h2>Step 6 — Create your production database</h2>
+  <ol>
+    <li>Search for <strong>MySQL Database Wizard</strong> or <strong>Manage My Databases</strong>.</li>
+    <li>Create a database, for example <code>elbarakaconseil_app</code>.</li>
+    <li>Create a database user with a strong unique password.</li>
+    <li>Grant that user privileges on the new database.</li>
+    <li>Save the database name, username, password, and host.</li>
+  </ol>
+  <p>cPanel often prefixes names with the account username — use the exact names shown in the interface.</p>
+  <p>If the app uses PostgreSQL, you need PostgreSQL support from the host.</p>
+
+  <h2>Step 7 — Configure your production .env</h2>
+  <pre>cd /home/elbarakaconseil/repositories/laravel-app
+cp .env.example .env</pre>
+  <div class="note warn">If <code>.env</code> already exists, do not overwrite it.</div>
+  <p>Set production values such as:</p>
+  <pre>APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://elbarakaconseil.dz
+
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=YOUR_CPANEL_DATABASE_NAME
+DB_USERNAME=YOUR_CPANEL_DATABASE_USER
+DB_PASSWORD="YOUR_STRONG_DATABASE_PASSWORD"</pre>
+  <p>Also configure mail, cache, session, storage, payments, and API keys as needed.</p>
+  <pre>php artisan key:generate</pre>
+  <p>
+    Generate a key only for a fresh install. Preserve an existing production <code>APP_KEY</code>.
+    Never commit <code>.env</code> to GitHub or expose it through <code>public_html</code>.
+  </p>
+
+  <h2>Step 8 — Point the main domain to Laravel’s public files</h2>
+  <p>Laravel must serve requests through <code>public/index.php</code>, not the whole project directory.</p>
+  <ul>
+    <li><strong>Preferred:</strong> Point the main domain document root to
+      <code>/home/elbarakaconseil/repositories/laravel-app/public</code>.</li>
+    <li><strong>Fallback:</strong> If the domain must use <code>public_html</code>, copy Laravel’s public files there and fix entry-point paths.</li>
+  </ul>
+
+  <h3>8.1 Copy the public files (fallback)</h3>
+  <pre>cp -a \
+  /home/elbarakaconseil/repositories/laravel-app/public/. \
+  /home/elbarakaconseil/public_html/</pre>
+
+  <h3>8.2 Fix index.php</h3>
+  <p>Open <code>/home/elbarakaconseil/public_html/index.php</code> and change paths similar to:</p>
+  <pre>require __DIR__.'/../repositories/laravel-app/vendor/autoload.php';
+
+$app = require_once __DIR__.'/../repositories/laravel-app/bootstrap/app.php';</pre>
+  <p>If present, also update maintenance path to:</p>
+  <pre>__DIR__.'/../repositories/laravel-app/storage/framework/maintenance.php'</pre>
+  <p>Keep the rest of Laravel’s original <code>index.php</code> intact and check every relative path.</p>
+
+  <h2>Step 9 — Finish the Laravel setup</h2>
+  <pre>cd /home/elbarakaconseil/repositories/laravel-app
+php artisan optimize:clear
+php artisan migrate --force
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache</pre>
+  <p>
+    Run migrations only after confirming they are intended for this production database.
+    Set storage permissions and the public storage link if needed. With the fallback deploy,
+    ensure <code>public_html/storage</code> serves uploaded files correctly.
+  </p>
+
+  <h2>Step 10 — Test the live domain</h2>
+  <p>Open <strong>https://elbarakaconseil.dz</strong> and test the homepage, login, database operations, uploads, and API routes.</p>
+  <p>If something fails, check:</p>
+  <ul>
+    <li><code>storage/logs/laravel.log</code></li>
+    <li>cPanel Errors page</li>
+    <li>PHP version and extensions</li>
+    <li><code>.env</code> database settings</li>
+    <li>File and directory permissions</li>
+    <li>SSL certificate</li>
+  </ul>
+  <div class="note warn">Keep <code>APP_DEBUG=false</code> in production. Do not expose the whole Laravel project or <code>.env</code> publicly.</div>
+
+  <h2>Step 11 — Update after GitHub pushes</h2>
+  <p>Pushing to GitHub does not automatically update the live site. Pull and deploy manually:</p>
+  <ol>
+    <li>Open <strong>Git Version Control</strong>.</li>
+    <li>Find <code>laravel-app</code> → <strong>Manage</strong>.</li>
+    <li>Open <strong>Pull or Deploy</strong>.</li>
+    <li>Click <strong>Update from Remote</strong>.</li>
+    <li>Click <strong>Deploy HEAD Commit</strong> if a <code>.cpanel.yml</code> file is configured.</li>
+    <li>Run Composer, migration, and cache commands in Terminal as needed.</li>
+    <li>Update <code>public_html</code> with any changed public assets.</li>
+  </ol>
+  <p>
+    For repeatable deployment, configure a <code>.cpanel.yml</code> file to copy public assets and automate tasks.
+    Do not copy the entire Laravel repository into <code>public_html</code>.
+  </p>
+
+  <h2>Official references</h2>
+  <ul>
+    <li>cPanel Git Version Control</li>
+    <li>Set up access to private repositories</li>
+    <li>cPanel deployment configuration</li>
+  </ul>
+
+  <div class="footer">
+    Prepared for elbarakaconseil.dz · cPanel account elbarakaconseil · Private GitHub → Laravel outside public_html
+  </div>
+</body>
+</html>

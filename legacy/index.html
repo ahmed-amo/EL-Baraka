@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EL BARAKA CONSEIL | Gardiennage, sécurisation et transport de fonds</title>
+<meta name="description" content="Depuis 1996, EL BARAKA CONSEIL assure le gardiennage, la sécurisation de sites, l'escorte et le transport de fonds et de produits sensibles pour les entreprises et institutions.">
+<meta name="theme-color" content="#0B1B45">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EL BARAKA CONSEIL | Gardiennage, sécurisation et transport de fonds">
+<meta property="og:description" content="Plus de 25 ans d'expertise : gardiennage, escorte, télésurveillance, transport de fonds et de produits sensibles.">
+<meta property="og:image" content="assets/logo.png">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"EL BARAKA CONSEIL","legalName":"S.A.R.L EL BARAKA CONSEIL","foundingDate":"1996","description":"Société spécialisée dans le gardiennage, la sécurisation, l'escorte et le transport de fonds et de produits sensibles.","numberOfEmployees":{"@type":"QuantitativeValue","minValue":200}}
+</script>
+<style>
+/* Charte alignée sur le logo : bleu royal, bleu nuit, argent, blanc */
+:root{
+  --navy:#0B1B45; --navy-2:#102766; --navy-3:#173A8A;
+  --blue:#0F4C9A; --cta:#1A66C7; --cta-2:#2F80E0; --sky:#9CC3F5;
+  --silver:#B9C2D0; --silver-2:#DDE3EC;
+  --ink:#0F172A; --muted:#566074; --line:#E2E7EF; --bg:#F4F6FA; --white:#fff;
+  --ok:#1F8A5B; --err:#C0392B;
+  --radius:14px; --shadow:0 10px 30px rgba(11,27,69,.10);
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:Sora,Inter,sans-serif;line-height:1.2;letter-spacing:-.01em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.hero .eyebrow,.band .eyebrow{color:var(--sky)}
+.sec{padding:96px 0}
+.sec.alt{background:var(--bg)}
+.sec-head{max-width:700px;margin-bottom:48px}
+.sec-head h2{font-size:clamp(1.7rem,3vw,2.4rem);color:var(--navy)}
+.sec-head p{color:var(--muted);margin-top:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:10px;font-weight:600;font-size:.95rem;border:1.5px solid transparent;cursor:pointer;transition:.2s;font-family:inherit}
+.btn-primary{background:var(--cta);color:#fff}
+.btn-primary:hover{background:var(--cta-2)}
+.btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-3)}
+.btn-line{border-color:var(--navy);color:var(--navy)}
+.btn-line:hover{background:var(--navy);color:#fff}
+:focus-visible{outline:3px solid var(--cta-2);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:8px;background:#fff;color:var(--navy);padding:10px 16px;border-radius:8px;z-index:200;font-weight:600}
+.skip:focus{left:12px}
+
+/* Header clair : met le logo en valeur */
+header.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);transition:box-shadow .2s}
+header.top.scrolled{box-shadow:0 6px 24px rgba(11,27,69,.10)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:48px;height:48px;object-fit:contain;flex:none}
+.brand b{font-family:Sora,sans-serif;font-size:1rem;letter-spacing:.04em;display:block;line-height:1.1;color:var(--navy)}
+.brand small{display:block;font-size:.66rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.menu{display:flex;align-items:center;gap:28px}
+.menu a:not(.btn){color:#2B3750;font-size:.92rem;font-weight:500;transition:.2s;padding:6px 0;border-bottom:2px solid transparent}
+.menu a:not(.btn):hover,.menu a.active{color:var(--blue);border-color:var(--blue)}
+.menu .btn{padding:10px 18px}
+.burger{display:none;background:none;border:0;color:var(--navy);cursor:pointer;padding:8px}
+.burger svg{width:26px;height:26px}
+
+/* Hero */
+.hero{position:relative;color:#fff;background:var(--navy);overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(11,27,69,.97) 28%,rgba(16,39,102,.6) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-top:104px}
+.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);max-width:760px;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--sky)}
+.hero p.lead{max-width:560px;margin:22px 0 34px;color:#CBD7EC;font-size:1.1rem}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.stats{position:relative;z-index:2;margin-top:90px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.16)}
+.stat{padding:28px 24px 32px 0}
+.stat+.stat{padding-left:24px;border-left:1px solid rgba(255,255,255,.16)}
+.stat strong{font-family:Sora,sans-serif;font-size:2.2rem;color:var(--sky);display:block;line-height:1}
+.stat span{font-size:.88rem;color:#B7C6E0}
+
+/* Clients */
+.clients{padding:56px 0 60px}
+.clients h2{font-size:1.05rem;color:var(--navy);text-align:center;margin-bottom:28px;font-weight:600}
+.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.track{display:flex;gap:20px;width:max-content;animation:slide 38s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.logo-card{width:170px;height:84px;background:#fff;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;padding:14px}
+.logo-card img{max-height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.8;transition:.25s}
+.logo-card:hover img{filter:none;opacity:1}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* About */
+.about{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.about-img{position:relative}
+.about-img img.main{border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover;width:100%}
+.about-badge{position:absolute;right:-18px;bottom:-18px;background:var(--navy);color:#fff;border-radius:var(--radius);padding:20px 26px;box-shadow:var(--shadow)}
+.about-badge strong{font-family:Sora,sans-serif;font-size:2rem;color:var(--sky);display:block;line-height:1}
+.about-badge span{font-size:.8rem;color:#B7C6E0}
+.about h2{font-size:clamp(1.7rem,3vw,2.3rem);color:var(--navy);margin-bottom:16px}
+.about p{color:var(--muted);margin-bottom:16px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:26px 0}
+.fact{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:#fff}
+.fact b{display:block;color:var(--navy);font-family:Sora,sans-serif}
+.fact span{font-size:.85rem;color:var(--muted)}
+.pillars{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;margin-bottom:30px}
+.pillars li{display:flex;gap:10px;font-size:.92rem;color:var(--ink)}
+.pillars svg{width:20px;height:20px;color:var(--cta);flex:none;margin-top:2px}
+
+/* Services */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#CBD5E4}
+.card .ph{aspect-ratio:16/10;overflow:hidden;background:var(--navy-2)}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover .ph img{transform:scale(1.05)}
+.card .bd{padding:24px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.08rem;color:var(--navy);margin-bottom:10px}
+.card p{font-size:.93rem;color:var(--muted);flex:1}
+.card .more{margin-top:18px;font-weight:600;font-size:.9rem;color:var(--blue);display:inline-flex;gap:6px;align-items:center;background:none;border:0;cursor:pointer;font-family:inherit;padding:0;align-self:flex-start}
+.card .more:hover{color:var(--cta-2)}
+
+/* Galerie */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.tab{background:#fff;border:1.5px solid var(--line);color:var(--navy);border-radius:999px;padding:8px 18px;font-weight:600;font-size:.88rem;cursor:pointer;font-family:inherit;transition:.15s}
+.tab:hover{border-color:var(--blue)}
+.tab[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gal button{border:0;padding:0;cursor:zoom-in;border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:var(--navy-2);position:relative}
+.gal button img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gal button:hover img{transform:scale(1.06)}
+.gal button::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(11,27,69,.45));opacity:0;transition:.3s}
+.gal button:hover::after{opacity:1}
+.gal .hide{display:none}
+.gal-more{margin-top:28px;text-align:center}
+.lb{position:fixed;inset:0;z-index:120;background:rgba(6,14,38,.92);display:none;align-items:center;justify-content:center;padding:24px}
+.lb.open{display:flex}
+.lb img{max-width:min(1100px,92vw);max-height:84vh;border-radius:10px;object-fit:contain}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:50%;width:48px;height:48px;font-size:1.6rem;cursor:pointer}
+.lb button:hover{background:rgba(255,255,255,.25)}
+.lb .x{top:20px;right:20px}.lb .p{left:20px;top:50%}.lb .n{right:20px;top:50%}
+.lb .cap{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:#B7C6E0;font-size:.85rem}
+
+/* Recrutement */
+.band{background:linear-gradient(120deg,var(--navy),var(--navy-3));color:#fff;border-radius:20px;padding:48px;display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.band h2{font-size:clamp(1.5rem,2.6vw,2rem)}
+.band p{color:#C3D0E8;margin-top:12px}
+.band form{background:#fff;color:var(--ink);border-radius:var(--radius);padding:28px}
+
+/* FAQ */
+.faq{max-width:820px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:12px;padding:0 22px}
+.faq summary{cursor:pointer;font-weight:600;color:var(--navy);padding:18px 0;list-style:none;display:flex;justify-content:space-between;gap:16px;font-family:Sora,sans-serif;font-size:.98rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--cta)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:var(--muted);padding-bottom:18px;font-size:.95rem}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.contact h2{font-size:clamp(1.7rem,3vw,2.3rem);color:var(--navy);margin-bottom:14px}
+.contact .info p{color:var(--muted);margin-bottom:18px}
+.checks{list-style:none;display:grid;gap:12px;margin-top:24px}
+.checks li{display:flex;gap:10px;color:var(--ink);font-size:.95rem}
+.checks svg{width:20px;height:20px;color:var(--cta);flex:none;margin-top:2px}
+form.box{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fld{margin-bottom:16px}
+.fld label{display:block;font-size:.84rem;font-weight:600;color:var(--navy);margin-bottom:6px}
+.fld input,.fld select,.fld textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font:inherit;font-size:.95rem;background:#fff;color:var(--ink);transition:.15s}
+.fld textarea{min-height:110px;resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--cta);outline:none;box-shadow:0 0 0 3px rgba(26,102,199,.18)}
+.consent{display:flex;gap:10px;font-size:.82rem;color:var(--muted);margin:6px 0 20px}
+.consent input{margin-top:3px;accent-color:var(--navy)}
+.hp{position:absolute;left:-9999px}
+.msg{margin-top:16px;padding:12px 14px;border-radius:10px;font-size:.92rem;display:none}
+.msg.ok{display:block;background:#E8F6EF;color:var(--ok)}
+.msg.err{display:block;background:#FCEDEA;color:var(--err)}
+
+/* Footer */
+footer{background:var(--navy);color:#B7C6E0;padding:72px 0 28px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1.3fr 1fr;gap:40px}
+footer h4{color:#fff;font-size:.9rem;margin-bottom:16px;letter-spacing:.04em}
+footer ul{list-style:none;display:grid;gap:10px;font-size:.9rem}
+footer a:hover{color:#fff}
+footer .brand img{background:#fff;border-radius:12px;padding:3px}
+footer .brand b{color:#fff}
+footer .about-f p{font-size:.92rem;margin-top:16px;max-width:300px}
+.legal{margin-top:48px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.82rem}
+.legal button{background:none;border:0;color:inherit;cursor:pointer;font:inherit;text-decoration:underline}
+
+/* Cookie banner */
+.cookie{position:fixed;left:20px;bottom:20px;z-index:90;max-width:420px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 20px 50px rgba(11,27,69,.24);padding:22px;display:none}
+.cookie.show{display:block}
+.cookie h5{font-family:Sora,sans-serif;color:var(--navy);font-size:1rem;margin-bottom:8px}
+.cookie p{font-size:.85rem;color:var(--muted)}
+.cookie details{margin-top:8px;font-size:.82rem;color:var(--muted)}
+.cookie summary{cursor:pointer;color:var(--navy);font-weight:600}
+.cookie .acts{display:flex;gap:10px;margin-top:16px}
+.cookie .btn{padding:10px 16px;font-size:.88rem;flex:1}
+
+/* Chatbot */
+.fab{position:fixed;right:22px;bottom:22px;z-index:70;width:60px;height:60px;border-radius:50%;background:var(--cta);color:#fff;border:0;cursor:pointer;box-shadow:0 12px 30px rgba(11,27,69,.35);display:grid;place-items:center;transition:.2s}
+.fab:hover{transform:scale(1.06);background:var(--cta-2)}
+.fab svg{width:28px;height:28px}
+.chat{position:fixed;right:22px;bottom:96px;z-index:75;width:372px;max-width:calc(100vw - 24px);height:540px;max-height:calc(100vh - 120px);background:#fff;border-radius:18px;box-shadow:0 24px 60px rgba(11,27,69,.34);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--line)}
+.chat.open{display:flex}
+.chat-h{background:var(--navy);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px}
+.chat-h .av{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;overflow:hidden}
+.chat-h .av img{width:32px;height:32px;object-fit:contain}
+.chat-h b{display:block;font-size:.95rem;font-family:Sora,sans-serif}
+.chat-h small{color:#9FB3D6;font-size:.76rem}
+.chat-h button{margin-left:auto;background:none;border:0;color:#fff;cursor:pointer;font-size:1.5rem;line-height:1}
+.chat-b{flex:1;overflow-y:auto;padding:18px;background:var(--bg);display:flex;flex-direction:column;gap:10px}
+.bub{max-width:86%;padding:10px 14px;border-radius:14px;font-size:.9rem;white-space:pre-wrap;word-wrap:break-word}
+.bub.bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+.bub.me{background:var(--navy);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.bub a{color:var(--cta);font-weight:600;text-decoration:underline}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-self:flex-start;margin-top:2px}
+.chip{background:#fff;border:1.5px solid var(--navy-3);color:var(--navy);border-radius:999px;padding:6px 12px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit;transition:.15s}
+.chip:hover{background:var(--navy);color:#fff}
+.chat-f{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:#fff}
+.chat-f input{flex:1;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:.9rem}
+.chat-f input:focus{outline:none;border-color:var(--cta)}
+.chat-f button{background:var(--navy);color:#fff;border:0;border-radius:10px;padding:0 16px;cursor:pointer;font-weight:600}
+.typing{align-self:flex-start;color:var(--muted);font-size:.8rem;padding-left:4px}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(18px);transition:.7s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+noscript .rv,.no-js .rv{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .grid{grid-template-columns:1fr 1fr}
+  .gal{grid-template-columns:repeat(3,1fr)}
+  .about,.contact,.band{grid-template-columns:1fr;gap:40px}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3){padding-left:0;border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid rgba(255,255,255,.16)}
+}
+@media (max-width:760px){
+  .burger{display:block}
+  .menu{position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:20px 24px 28px;gap:16px;display:none;border-bottom:1px solid var(--line);box-shadow:0 14px 30px rgba(11,27,69,.12)}
+  .menu.open{display:flex}
+  .sec{padding:68px 0}
+  .grid,.row,.facts,.pillars{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr;gap:10px}
+  .band{padding:30px 22px}
+  .band form{padding:20px}
+  .about-badge{right:10px;bottom:-16px}
+  form.box{padding:24px}
+  .cookie{left:12px;right:12px;bottom:12px;max-width:none}
+  body.has-banner .fab{bottom:calc(var(--bh,200px) + 20px)}
+  .chat{right:12px;bottom:90px}
+  .fgrid{grid-template-columns:1fr}
+  .lb .p{left:8px}.lb .n{right:8px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="top" id="hdr">
+  <div class="wrap nav">
+    <a href="#accueil" class="brand" aria-label="EL BARAKA CONSEIL, accueil">
+      <img src="assets/logo.png" alt="Logo EL BARAKA CONSEIL" width="48" height="48">
+      <span><b>EL BARAKA CONSEIL</b><small>Gardiennage · Transport de fonds</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav class="menu" id="menu" aria-label="Navigation principale">
+      <a href="#accueil">Accueil</a>
+      <a href="#apropos">À propos</a>
+      <a href="#services">Services</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#recrutement">Recrutement</a>
+      <a href="#contact" class="btn btn-primary" data-track="cta_header">Contactez-nous</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+<!-- HERO -->
+<section class="hero" id="accueil" data-section="hero">
+  <img src="" data-asset="assetsServer/exicting-picture.jpeg" alt="Équipe de sécurité EL BARAKA CONSEIL sur le terrain" fetchpriority="high">
+  <div class="wrap">
+    <span class="eyebrow">Gardiennage · Sécurisation · Transport de fonds</span>
+    <h1>Nous œuvrons pour <em>votre sécurité</em></h1>
+    <p class="lead">Avec une expertise de plus de 25 ans, nous sommes là pour votre protection.</p>
+    <div class="cta">
+      <a href="#contact" class="btn btn-primary" data-track="cta_hero_contact">Demander un devis</a>
+      <a href="#recrutement" class="btn btn-ghost" data-track="cta_hero_recrutement">Rejoignez-nous</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong data-count="25">0</strong><span>années d'existence</span></div>
+      <div class="stat"><strong data-count="200">0</strong><span>employés</span></div>
+      <div class="stat"><strong data-count="8">0</strong><span>services</span></div>
+      <div class="stat"><strong data-count="60">0</strong><span>entreprises partenaires</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients" id="references" data-section="references" aria-labelledby="ref-t">
+  <div class="wrap"><h2 id="ref-t">Rejoignez les 60+ entreprises s'engageant avec nous</h2></div>
+  <div class="marquee" aria-label="Logos de nos clients et partenaires"><div class="track" id="logos"></div></div>
+</section>
+
+<!-- A PROPOS -->
+<section class="sec alt" id="apropos" data-section="apropos">
+  <div class="wrap about">
+    <div class="about-img rv">
+      <img class="main" src="" data-asset="assetsServer/about.jpg" alt="Équipe EL BARAKA CONSEIL" loading="lazy">
+      <div class="about-badge"><strong>25 ans</strong><span>d'existence</span></div>
+    </div>
+    <div class="rv">
+      <span class="eyebrow">À propos d'EL BARAKA CONSEIL</span>
+      <h2>Une expertise de plus de 25 ans au service de votre protection</h2>
+      <p>Créée en 1996, S.A.R.L EL BARAKA CONSEIL est une société spécialisée dans le gardiennage, le transport de fonds et de produits sensibles. Grâce à nos moyens déployés et à notre expertise, nous garantissons une prestation de qualité, adaptée à vos besoins spécifiques, tout en assurant la confidentialité de nos relations.</p>
+      <p>Avec une expertise de plus de 25 ans, nous vous offrons des solutions sur mesure pour la protection de vos biens et de vos proches. Faites confiance à notre équipe professionnelle et à nos équipements de pointe. Notre engagement envers l'excellence et la satisfaction du client est au cœur de notre mission.</p>
+      <div class="facts">
+        <div class="fact"><b>Créée en 1996</b><span>S.A.R.L</span></div>
+        <div class="fact"><b>10.500.000 DA</b><span>Capital social</span></div>
+      </div>
+      <ul class="pillars">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Équipements de pointe</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Véhicules blindés, protocoles stricts</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Télésurveillance en temps réel</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Confidentialité de nos relations</li>
+      </ul>
+      <a href="#contact" class="btn btn-navy" data-track="cta_about_contact">Parler à notre équipe</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="services" data-section="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Nos services</span>
+      <h2>Des solutions de sécurité complètes, adaptées à votre activité</h2>
+      <p>De la surveillance des sites au transfert sécurisé de fonds, nos équipes qualifiées interviennent avec des protocoles stricts et des équipements adaptés.</p>
+    </div>
+    <div class="grid" id="svc-grid"></div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section class="sec alt" id="galerie" data-section="galerie">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Galerie</span>
+      <h2>Nos équipes en situation</h2>
+      <p>Quelques images de nos interventions sur le terrain et de nos activités de sécurité.</p>
+    </div>
+    <div class="tabs" role="group" aria-label="Filtrer la galerie">
+      <button class="tab" data-f="all" aria-pressed="true">Tout</button>
+      <button class="tab" data-f="terrain" aria-pressed="false">Sur le terrain</button>
+      <button class="tab" data-f="interieur" aria-pressed="false">À l'intérieur de sécurité</button>
+    </div>
+    <div class="gal" id="gal"></div>
+    <div class="gal-more"><a class="btn btn-line" href="https://el-baraka-conseil-website.vercel.app/galerie" target="_blank" rel="noopener" data-track="gallery_all">Voir toute la galerie</a></div>
+  </div>
+</section>
+
+<!-- RECRUTEMENT -->
+<section class="sec" id="recrutement" data-section="recrutement">
+  <div class="wrap">
+    <div class="band rv">
+      <div>
+        <span class="eyebrow">Recrutement</span>
+        <h2>Une équipe de plus de 200 professionnels, et bientôt vous ?</h2>
+        <p>Rejoignez une société de référence du gardiennage et du transport de fonds. Remplissez le formulaire : votre candidature est transmise directement à notre équipe.</p>
+      </div>
+      <form id="jobForm" novalidate>
+        <div class="row">
+          <div class="fld"><label for="j_nom">Nom *</label><input id="j_nom" name="nom" required autocomplete="family-name"></div>
+          <div class="fld"><label for="j_pre">Prénom *</label><input id="j_pre" name="prenom" required autocomplete="given-name"></div>
+        </div>
+        <div class="row">
+          <div class="fld"><label for="j_age">Âge *</label><input id="j_age" name="age" type="number" min="18" max="70" required></div>
+          <div class="fld"><label for="j_tel">Téléphone *</label><input id="j_tel" name="telephone" type="tel" required autocomplete="tel"></div>
+        </div>
+        <div class="fld"><label for="j_mail">E-mail *</label><input id="j_mail" name="email" type="email" required autocomplete="email"></div>
+        <div class="row">
+          <div class="fld"><label for="j_wil">Wilaya *</label><input id="j_wil" name="wilaya" required></div>
+          <div class="fld"><label for="j_com">Commune</label><input id="j_com" name="commune"></div>
+        </div>
+        <div class="fld"><label for="j_adr">Adresse</label><input id="j_adr" name="adresse" autocomplete="street-address"></div>
+        <div class="row">
+          <div class="fld"><label for="j_niv">Niveau d'étude</label><input id="j_niv" name="niveau_etude"></div>
+          <div class="fld"><label for="j_per">Permis de conduire</label>
+            <select id="j_per" name="permis"><option value="">Choisir</option><option>Oui</option><option>Non</option></select></div>
+        </div>
+        <div class="fld"><label for="j_sn">Statut du service national</label>
+          <select id="j_sn" name="service_national"><option value="">Choisir</option><option>Accompli</option><option>Dispensé</option><option>Sursis</option><option>Non concerné(e)</option></select></div>
+        <div class="fld"><label for="j_exp">Expérience</label><textarea id="j_exp" name="experience" placeholder="Postes occupés, durée, domaine…"></textarea></div>
+        <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="consent"><input type="checkbox" id="j_ok" required><span>J'accepte que ces informations soient transmises à EL BARAKA CONSEIL pour le traitement de ma candidature.</span></label>
+        <button class="btn btn-navy" type="submit" style="width:100%">Envoyer ma candidature</button>
+        <div class="msg" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec alt" id="faq" data-section="faq">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="eyebrow">Questions fréquentes</span><h2>Ce que nos clients nous demandent</h2></div>
+    <div class="faq rv">
+      <details><summary>Quels services proposez-vous ?</summary><p>Protection des biens et des personnes, gardiennage, transport de produits sensibles, escorte, transfert, télésurveillance, surveillance des sites et des infrastructures, activités cynophiles et sécurité incendie.</p></details>
+      <details><summary>Depuis quand existez-vous ?</summary><p>EL BARAKA CONSEIL a été créée en 1996. S.A.R.L au capital social de 10.500.000 DA, la société compte aujourd'hui plus de 200 employés et plus de 25 ans d'expertise.</p></details>
+      <details><summary>Comment sont sécurisés vos transports de fonds et de produits sensibles ?</summary><p>Par une équipe qualifiée, des véhicules blindés et des protocoles stricts, avec la possibilité d'une escorte assurant une protection continue du point A au point B.</p></details>
+      <details><summary>Comment obtenir un devis ?</summary><p>Décrivez votre besoin via le <a href="#contact" style="color:var(--cta);font-weight:600">formulaire de contact</a> ou auprès de notre assistant en bas à droite. Un membre de notre équipe vous recontacte.</p></details>
+      <details><summary>Vos échanges sont-ils confidentiels ?</summary><p>Oui, la confidentialité de nos relations clients fait partie de nos engagements.</p></details>
+      <details><summary>Comment postuler chez vous ?</summary><p>Utilisez le <a href="#recrutement" style="color:var(--cta);font-weight:600">formulaire de recrutement</a> de cette page : votre candidature est transmise directement à notre équipe.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec" id="contact" data-section="contact">
+  <div class="wrap contact">
+    <div class="info rv">
+      <span class="eyebrow">Contactez-nous</span>
+      <h2>Parlons de votre dispositif de sécurité</h2>
+      <p>Décrivez-nous votre besoin : un membre de notre équipe vous répond rapidement. Vous pouvez aussi poser vos questions à notre assistant en bas à droite.</p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Solutions sur mesure pour entreprises et institutions</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Confidentialité de nos relations</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Véhicules blindés et protocoles stricts</li>
+      </ul>
+    </div>
+    <form class="box rv" id="leadForm" novalidate>
+      <div class="row">
+        <div class="fld"><label for="f_nom">Nom et prénom *</label><input id="f_nom" name="nom" required autocomplete="name"></div>
+        <div class="fld"><label for="f_soc">Société *</label><input id="f_soc" name="societe" required autocomplete="organization"></div>
+      </div>
+      <div class="row">
+        <div class="fld"><label for="f_mail">E-mail professionnel *</label><input id="f_mail" name="email" type="email" required autocomplete="email"></div>
+        <div class="fld"><label for="f_tel">Téléphone</label><input id="f_tel" name="telephone" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="fld"><label for="f_svc">Service concerné</label>
+        <select id="f_svc" name="service"><option value="">Sélectionnez un service</option></select>
+      </div>
+      <div class="fld"><label for="f_msg">Votre besoin *</label><textarea id="f_msg" name="message" required placeholder="Type de site, fréquence, durée, contraintes particulières…"></textarea></div>
+      <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="consent"><input type="checkbox" id="f_ok" required><span>J'accepte que ces informations soient transmises à EL BARAKA CONSEIL afin de traiter ma demande.</span></label>
+      <button class="btn btn-navy" type="submit">Envoyer ma demande</button>
+      <div class="msg" role="status"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="about-f">
+        <a href="#accueil" class="brand"><img src="assets/logo.png" alt="Logo EL BARAKA CONSEIL" width="48" height="48"><span><b>EL BARAKA CONSEIL</b></span></a>
+        <p>Votre société de confiance en gardiennage, transport de fonds et produits sensibles.</p>
+      </div>
+      <div><h4>Entreprise</h4><ul>
+        <li><a href="#accueil">Accueil</a></li><li><a href="#apropos">À propos de nous</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contactez-nous</a></li>
+      </ul></div>
+      <div><h4>Services</h4><ul id="f-svc"></ul></div>
+      <div><h4>Galerie &amp; recrutement</h4><ul>
+        <li><a href="#galerie" data-gal="terrain">Sur le terrain</a></li>
+        <li><a href="#galerie" data-gal="interieur">À l'intérieur de sécurité</a></li>
+        <li><a href="#recrutement">Recrutement</a></li>
+      </ul></div>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr"></span> EL BARAKA CONSEIL S.A.R.L. Tous droits réservés.</span>
+      <button type="button" id="cookieManage">Gérer les cookies</button>
+    </div>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Visionneuse photo">
+  <button class="x" aria-label="Fermer">×</button><button class="p" aria-label="Photo précédente">‹</button>
+  <img id="lbImg" alt=""><button class="n" aria-label="Photo suivante">›</button><div class="cap" id="lbCap"></div>
+</div>
+
+<!-- Cookie banner -->
+<div class="cookie" id="cookie" role="dialog" aria-labelledby="ck-t" aria-live="polite">
+  <h5 id="ck-t">Votre vie privée</h5>
+  <p>Nous utilisons un cookie de mesure d'audience pour comprendre quelles pages intéressent nos visiteurs et améliorer notre service. Aucun suivi n'est activé sans votre accord.</p>
+  <details><summary>Détails</summary>
+    <p style="margin-top:6px">Si vous acceptez : un identifiant visiteur anonyme (cookie « eb_vid », 13 mois), vos pages consultées, la profondeur de lecture, la source de la visite (référent, UTM) et le type d'appareil. Si vous nous écrivez (formulaire ou assistant), ces informations sont jointes à votre demande pour mieux vous répondre. Vous pouvez retirer votre accord à tout moment via « Gérer les cookies ».</p>
+  </details>
+  <div class="acts">
+    <button class="btn btn-line" id="ckNo" type="button">Refuser</button>
+    <button class="btn btn-navy" id="ckYes" type="button">Accepter</button>
+  </div>
+</div>
+
+<!-- Chatbot -->
+<button class="fab" id="fab" aria-label="Ouvrir l'assistant" aria-expanded="false" data-track="chat_open">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg>
+</button>
+<section class="chat" id="chat" aria-label="Assistant EL BARAKA CONSEIL">
+  <div class="chat-h">
+    <div class="av"><img src="assets/logo.png" alt=""></div>
+    <div><b>Assistant EL BARAKA</b><small>Réponses immédiates · Prise de demande</small></div>
+    <button id="chatX" aria-label="Fermer">×</button>
+  </div>
+  <div class="chat-b" id="chatB" aria-live="polite"></div>
+  <form class="chat-f" id="chatF"><input id="chatI" placeholder="Posez votre question…" autocomplete="off" aria-label="Votre message"><button type="submit">Envoyer</button></form>
+</section>
+
+<script>
+/* ============================================================
+   CONFIGURATION : à adapter avant mise en ligne
+   ============================================================ */
+const CONFIG = {
+  // Boîte de réception des demandes (formulaires + chatbot)
+  LEAD_EMAIL: 'angelo.antrax2018@gmail.com',
+  // Envoi des e-mails sans serveur via FormSubmit (1re soumission = e-mail d'activation à valider)
+  get FORM_ENDPOINT(){ return 'https://formsubmit.co/ajax/' + this.LEAD_EMAIL; },
+  // Optionnel : URL d'une API (ex. /api/track sur Vercel) qui enregistre chaque visite
+  TRACK_ENDPOINT: '',
+  // Origine des photos. Pour être autonome : copier les dossiers assetsServer/ et gallery/ du projet
+  // d'origine dans ce projet, puis mettre ASSET_BASE = ''
+  ASSET_BASE: 'https://el-baraka-conseil-website.vercel.app/'
+};
+
+/* ---------------- Données reprises du site original ---------------- */
+const A = p => CONFIG.ASSET_BASE + p;
+const SERVICES = [
+  {t:'Protection des biens et des personnes', img:'IMG_2791.jpg', d:'Nous assurons la sécurité de vos biens et de vos personnes grâce à des solutions adaptées et un personnel qualifié, garantissant ainsi une protection efficace contre les risques potentiels.'},
+  {t:'Gardiennage', img:'IMG_2665.jpg', d:"Nos services de gardiennage incluent la surveillance des sites, le contrôle des accès, et l'accueil des visiteurs, assurant un environnement sécurisé et bien régulé."},
+  {t:'Transport de produits sensibles', img:'IMG_1381.jpg', d:'Notre équipe qualifiée garantit la protection de vos biens tout au long du trajet grâce à des véhicules blindés et des protocoles stricts pour assurer le transport de vos produits sensibles.'},
+  {t:'Escorte', img:'about.jpg', d:'Nous accompagnons les véhicules de nos clients, assurant une protection continue du point A au point B lors du transport de fonds, de personnes ou de produits sensibles.'},
+  {t:'Transfert', img:'IMG_2265.jpg', d:'Un transfert sécurisé de vos fonds, personnels ou produits sensibles avec nos véhicules blindés et adaptés, garantissant une sécurité maximale.'},
+  {t:'Télésurveillance', img:'IMG_1514.jpg', d:"Nous proposons des solutions de télésurveillance avancées pour surveiller vos sites en temps réel, permettant une intervention rapide en cas d'incidents."},
+  {t:'Surveillance des sites et des infrastructures', img:'IMG_3028.jpg', d:'Nos équipes effectuent une surveillance continue des sites et des infrastructures pour détecter toute activité suspecte et assurer une sécurité constante.'},
+  {t:'Activités cynophiles', img:'IMG_2646.jpg', d:"Nous utilisons des chiens de sécurité spécialement formés pour renforcer la protection des sites et effectuer des interventions en cas de besoin."},
+  {t:'Sécurité incendie', img:'IMG_1452.jpg', d:"Nous mettons en place des dispositifs et des protocoles pour prévenir et gérer les risques d'incendie, assurant ainsi la sécurité de vos installations contre les incendies."}
+];
+const LOGOS = [['ALG-TLC.png','ALG-TLC'],['ALGERIE-POST.png','Algérie Poste'],['anbt-logo.png','ANBT'],['BADR-logo.png','BADR'],['RIZZANI.png','Rizzani'],['AFRICAVER.png','Africaver'],['ONA.jpeg','ONA'],['SPA.jpeg','SPA'],['CTC.jpeg','CTC']];
+// Photos de la galerie du site d'origine (dossier gallery/). c = album d'origine
+const GAL = [
+  ['IMG_1397.jpg',''],['IMG_1449.jpg',''],['IMG_1440.jpg','terrain'],['IMG_2645.jpg',''],
+  ['IMG_1550.jpg','terrain'],['IMG_3019.jpg',''],['IMG_1422.jpg','terrain'],['IMG_1433.jpg','terrain'],
+  ['IMG_1456.jpg','interieur'],['IMG_1514.jpg','interieur'],['IMG_1519.jpg','interieur'],['IMG_2843.jpg','interieur']
+];
+
+/* ---------------- Utilitaires ---------------- */
+const $ = (s,c=document)=>c.querySelector(s);
+const $$ = (s,c=document)=>[...c.querySelectorAll(s)];
+const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ls = {get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
+const ss = {get(k){try{return sessionStorage.getItem(k)}catch(e){return null}},set(k,v){try{sessionStorage.setItem(k,v)}catch(e){}},del(k){try{sessionStorage.removeItem(k)}catch(e){}}};
+const uuid = ()=> (crypto.randomUUID ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return (c==='x'?r:(r&3|8)).toString(16)}));
+
+/* ---------------- Rendu des sections ---------------- */
+(function render(){
+  $('#yr').textContent = new Date().getFullYear();
+  $$('img[data-asset]').forEach(i=>{i.src=A(i.dataset.asset)});
+  $('#logos').innerHTML = LOGOS.concat(LOGOS).map(([f,n])=>`<div class="logo-card"><img src="${A('assetsServer/logos/'+f)}" alt="Logo ${esc(n)}" loading="lazy"></div>`).join('');
+  $('#svc-grid').innerHTML = SERVICES.map(s=>`
+    <article class="card rv">
+      <div class="ph"><img src="${A('assetsServer/'+s.img)}" alt="${esc(s.t)}" loading="lazy"></div>
+      <div class="bd"><h3>${esc(s.t)}</h3><p>${esc(s.d)}</p>
+      <button class="more" type="button" data-svc="${esc(s.t)}" data-track="service_quote:${esc(s.t)}">Demander un devis <span aria-hidden="true">→</span></button></div>
+    </article>`).join('');
+  $('#f_svc').insertAdjacentHTML('beforeend', SERVICES.map(s=>`<option>${esc(s.t)}</option>`).join(''));
+  $('#f-svc').innerHTML = SERVICES.map(s=>`<li><a href="#services">${esc(s.t)}</a></li>`).join('');
+  // Devis pré-rempli depuis une carte service
+  $('#svc-grid').addEventListener('click',e=>{
+    const b=e.target.closest('[data-svc]'); if(!b) return;
+    $('#f_svc').value=b.dataset.svc;
+    $('#contact').scrollIntoView({behavior:'smooth'});
+    setTimeout(()=>$('#f_nom').focus({preventScroll:true}),600);
+  });
+  // Menu mobile + ombre du header + lien actif
+  $('#burger').onclick = ()=>{const o=$('#menu').classList.toggle('open');$('#burger').setAttribute('aria-expanded',o)};
+  $$('#menu a').forEach(a=>a.addEventListener('click',()=>$('#menu').classList.remove('open')));
+  const hdr=$('#hdr'), links=$$('#menu a[href^="#"]:not(.btn)');
+  const secs=links.map(a=>$(a.getAttribute('href')));
+  addEventListener('scroll',()=>{
+    hdr.classList.toggle('scrolled',scrollY>8);
+    const y=scrollY+140; let cur=null; secs.forEach((s,i)=>{if(s&&s.offsetTop<=y)cur=i});
+    links.forEach((a,i)=>a.classList.toggle('active',i===cur));
+  },{passive:true});
+  // Apparition au scroll + compteurs
+  const io = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+  $$('.rv').forEach(el=>io.observe(el));
+  const cio = new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting) return; cio.unobserve(e.target);
+    const n=+e.target.dataset.count, t0=performance.now();
+    (function step(t){const p=Math.min((t-t0)/1200,1);e.target.textContent=Math.round(n*(1-Math.pow(1-p,3)))+(p>=1?'+':'');if(p<1)requestAnimationFrame(step)})(t0);
+  }),{threshold:.6});
+  $$('[data-count]').forEach(el=>cio.observe(el));
+})();
+
+/* ---------------- Galerie + visionneuse ---------------- */
+(function gallery(){
+  const g=$('#gal'), lb=$('#lb'), im=$('#lbImg'), cap=$('#lbCap');
+  g.innerHTML = GAL.map(([f,c],i)=>`<button type="button" data-i="${i}" data-c="${c}" aria-label="Agrandir la photo ${i+1}"><img src="${A('gallery/'+f)}" alt="Photo ${i+1} – EL BARAKA CONSEIL${c==='terrain'?' sur le terrain':c==='interieur'?' à l\'intérieur de sécurité':''}" loading="lazy"></button>`).join('');
+  let list=[], cur=0;
+  const visible=()=>$$('#gal button:not(.hide)');
+  function setFilter(f){
+    $$('.tab').forEach(t=>t.setAttribute('aria-pressed',t.dataset.f===f));
+    $$('#gal button').forEach(b=>b.classList.toggle('hide', f!=='all' && b.dataset.c!==f));
+  }
+  $$('.tab').forEach(t=>t.onclick=()=>{setFilter(t.dataset.f);Track.log('clic',{cible:'galerie:'+t.dataset.f})});
+  $$('[data-gal]').forEach(a=>a.addEventListener('click',()=>setFilter(a.dataset.gal)));
+  function show(i){
+    cur=(i+list.length)%list.length; const b=list[cur];
+    im.src=b.querySelector('img').src; im.alt=b.querySelector('img').alt; cap.textContent=`${cur+1} / ${list.length}`;
+  }
+  g.addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b) return;
+    list=visible(); lb.classList.add('open'); document.body.style.overflow='hidden'; show(list.indexOf(b));
+    Track.log('clic',{cible:'galerie_photo:'+b.dataset.i});
+  });
+  const close=()=>{lb.classList.remove('open');document.body.style.overflow='';im.src=''};
+  $('.lb .x').onclick=close; $('.lb .p').onclick=()=>show(cur-1); $('.lb .n').onclick=()=>show(cur+1);
+  lb.addEventListener('click',e=>{if(e.target===lb)close()});
+  addEventListener('keydown',e=>{
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close(); if(e.key==='ArrowLeft')show(cur-1); if(e.key==='ArrowRight')show(cur+1);
+  });
+})();
+
+/* ============================================================
+   SUIVI VISITEUR (soumis au consentement)
+   - Sans accord : aucun cookie, aucun stockage, aucun suivi.
+   - Avec accord : cookie "eb_vid" + parcours (pages, scroll, clics, sources).
+   Un visiteur n'est IDENTIFIÉ nominativement que s'il remplit
+   un formulaire ou le chatbot : son parcours est alors joint à la demande.
+   ============================================================ */
+var Track = (()=>{
+  const COOKIE='eb_vid', MAXAGE=60*60*24*395;
+  let consent = ls.get('eb_consent'); // 'granted' | 'denied' | null
+  let ev = [], maxScroll = 0, t0 = Date.now(), seen = new Set(), vid = null, sid = null, started=false;
+
+  const getCookie = n => (document.cookie.split('; ').find(r=>r.startsWith(n+'='))||'').split('=')[1];
+  const setCookie = (n,v,age)=>{document.cookie=`${n}=${v};max-age=${age};path=/;SameSite=Lax${location.protocol==='https:'?';Secure':''}`};
+  const delCookie = n => setCookie(n,'',0);
+
+  function device(){
+    const ua=navigator.userAgent;
+    const type=/Mobi|Android|iPhone/i.test(ua)?'mobile':/iPad|Tablet/i.test(ua)?'tablette':'ordinateur';
+    const os=/Windows/.test(ua)?'Windows':/Android/.test(ua)?'Android':/iPhone|iPad|Mac/.test(ua)?(/iPhone|iPad/.test(ua)?'iOS':'macOS'):/Linux/.test(ua)?'Linux':'autre';
+    const br=/Edg\//.test(ua)?'Edge':/Chrome\//.test(ua)?'Chrome':/Firefox\//.test(ua)?'Firefox':/Safari\//.test(ua)?'Safari':'autre';
+    return {type,os,navigateur:br,ecran:`${screen.width}x${screen.height}`,langue:navigator.language,fuseau:Intl.DateTimeFormat().resolvedOptions().timeZone};
+  }
+  function utm(){
+    const p=new URLSearchParams(location.search), o={};
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k=>{if(p.get(k))o[k]=p.get(k)});
+    return o;
+  }
+  function start(){
+    vid = getCookie(COOKIE);
+    const returning = !!vid;
+    if(!vid){ vid = uuid(); }
+    setCookie(COOKIE, vid, MAXAGE);
+    sid = ss.get('eb_sid');
+    if(!sid){
+      sid = uuid(); ss.set('eb_sid', sid);
+      ls.set('eb_visits', String((+ls.get('eb_visits')||0)+1));
+      if(!ls.get('eb_first')) ls.set('eb_first', new Date().toISOString());
+      ss.set('eb_landing', location.href);
+      ss.set('eb_ref', document.referrer||'direct');
+      ss.set('eb_utm', JSON.stringify(utm()));
+    }
+    log('page_view',{url:location.pathname+location.hash,returning});
+    if(started) return; started=true;
+    const so = new IntersectionObserver(es=>es.forEach(e=>{
+      const k=e.target.dataset.section;
+      if(e.isIntersecting && !seen.has(k)){seen.add(k);log('section_vue',{section:k})}
+    }),{threshold:.35});
+    $$('[data-section]').forEach(el=>so.observe(el));
+    addEventListener('scroll',()=>{
+      if(consent!=='granted')return;
+      const h=document.documentElement, p=Math.round((h.scrollTop+innerHeight)/h.scrollHeight*100);
+      if(p>maxScroll){maxScroll=p; [25,50,75,100].forEach(m=>{if(p>=m && !seen.has('s'+m)){seen.add('s'+m);log('scroll',{profondeur:m+'%'})}})}
+    },{passive:true});
+    document.addEventListener('click',e=>{
+      const el=e.target.closest('[data-track]'); if(el) log('clic',{cible:el.dataset.track});
+    });
+    document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')flush()});
+    addEventListener('pagehide',flush);
+    if(location.search.includes('debug=1')) console.table(context());
+  }
+  function stop(){
+    delCookie(COOKIE);
+    ['eb_visits','eb_first'].forEach(ls.del);
+    ['eb_sid','eb_landing','eb_ref','eb_utm','eb_ev'].forEach(ss.del);
+    ev=[]; seen=new Set(); vid=sid=null;
+  }
+  function log(type,data){
+    if(consent!=='granted') return;
+    ev.push({t:new Date().toISOString().slice(11,19),type,...data});
+    if(ev.length>150) ev.shift();
+    ss.set('eb_ev', JSON.stringify(ev.slice(-60)));
+  }
+  function context(){
+    if(consent!=='granted') return {suivi:'refusé ou non consenti'};
+    return {
+      visiteur_id: vid, session_id: sid,
+      nb_visites: +ls.get('eb_visits')||1,
+      premiere_visite: ls.get('eb_first'),
+      page_arrivee: ss.get('eb_landing'),
+      provenance: ss.get('eb_ref'),
+      campagne_utm: JSON.parse(ss.get('eb_utm')||'{}'),
+      appareil: device(),
+      temps_passe_sec: Math.round((Date.now()-t0)/1000),
+      scroll_max: maxScroll+'%',
+      sections_vues: [...seen].filter(s=>!/^s\d+$/.test(s)),
+      parcours: ev.slice(-25).map(e=>{const {t,type,...r}=e;return `${t} ${type} ${Object.values(r).join(' ')}`})
+    };
+  }
+  function flush(){
+    if(!CONFIG.TRACK_ENDPOINT||consent!=='granted')return;
+    try{ navigator.sendBeacon(CONFIG.TRACK_ENDPOINT, new Blob([JSON.stringify({type:'visit',...context()})],{type:'application/json'})); }catch(e){}
+  }
+  function setConsent(v){
+    consent=v; ls.set('eb_consent',v);
+    v==='granted' ? start() : stop();
+  }
+  return { init(){ if(consent==='granted') start(); }, get consent(){return consent}, setConsent, log, context };
+})();
+
+/* Bandeau cookies */
+(function cookieUI(){
+  const box=$('#cookie');
+  const show=()=>{box.classList.add('show');document.body.classList.add('has-banner');document.documentElement.style.setProperty('--bh',box.offsetHeight+'px')};
+  const hide=()=>{box.classList.remove('show');document.body.classList.remove('has-banner')};
+  $('#ckYes').onclick=()=>{Track.setConsent('granted');hide()};
+  $('#ckNo').onclick=()=>{Track.setConsent('denied');hide()};
+  $('#cookieManage').onclick=show;
+  if(Track.consent===null) setTimeout(show,600);
+  Track.init();
+})();
+
+/* ============================================================
+   ENVOI DES DEMANDES PAR E-MAIL
+   ============================================================ */
+async function sendLead(fields, source, transcript){
+  const ctx = Track.context();
+  const payload = {
+    _subject: `[EL BARAKA CONSEIL] Nouvelle demande (${source}) - ${fields.societe||fields.nom||''}`,
+    _template: 'table',
+    _captcha: 'false',
+    ...fields,
+    source_demande: source,
+    ...(transcript ? {conversation_chatbot: transcript} : {}),
+    suivi_visiteur: JSON.stringify(ctx, null, 2)
+  };
+  const r = await fetch(CONFIG.FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
+  if(!r.ok) throw new Error('HTTP '+r.status);
+  const j = await r.json().catch(()=>({}));
+  if(j.success==='false'||j.success===false) throw new Error(j.message||'Envoi refusé');
+  if(CONFIG.TRACK_ENDPOINT && Track.consent==='granted'){
+    try{navigator.sendBeacon(CONFIG.TRACK_ENDPOINT,new Blob([JSON.stringify({type:'lead',source,email:fields.email,...ctx})],{type:'application/json'}))}catch(e){}
+  }
+  Track.log('demande_envoyee',{source});
+}
+
+/* Formulaires (contact + recrutement) */
+function bindForm(form, source, required, okText){
+  const btn=$('button[type=submit]',form), box=$('.msg',form), label=btn.textContent, cb=$('input[type=checkbox]',form);
+  form.addEventListener('submit',async e=>{
+    e.preventDefault(); box.className='msg'; box.textContent='';
+    const d=Object.fromEntries(new FormData(form).entries());
+    if(d._honey) return;
+    delete d._honey;
+    const bad = required.some(k=>!String(d[k]||'').trim()) || !/^\S+@\S+\.\S+$/.test(d.email||'') || !cb.checked;
+    if(bad){ box.className='msg err'; box.textContent='Merci de renseigner les champs obligatoires (e-mail valide) et d\'accepter le traitement de vos informations.'; return; }
+    if(source==='recrutement'){ d.nom_complet=(d.nom+' '+d.prenom).trim(); }
+    btn.disabled=true; btn.textContent='Envoi en cours…';
+    try{
+      await sendLead(d,source);
+      box.className='msg ok'; box.textContent=okText; form.reset();
+    }catch(err){
+      box.className='msg err'; box.textContent='L\'envoi a échoué. Veuillez réessayer dans un instant. ('+err.message+')';
+    }finally{ btn.disabled=false; btn.textContent=label; }
+  });
+}
+bindForm($('#leadForm'),'formulaire',['nom','societe','message'],'Merci ! Votre demande a bien été envoyée. Nous vous répondons très prochainement.');
+bindForm($('#jobForm'),'recrutement',['nom','prenom','age','telephone','wilaya'],'Merci ! Votre candidature a bien été envoyée à notre équipe.');
+
+/* ============================================================
+   CHATBOT : FAQ + prise de demande
+   ============================================================ */
+(function chatbot(){
+  const B=$('#chatB'), I=$('#chatI'), F=$('#chatF'), panel=$('#chat'), fab=$('#fab');
+  const log=[]; // transcript
+  let mode='faq', step=0, lead={}, opened=false, pendingLead=false;
+  const LEAD_STEPS=[
+    ['nom','Quel est votre nom et prénom ?'],
+    ['societe','Pour quelle société travaillez-vous ?'],
+    ['email','Votre adresse e-mail professionnelle ?'],
+    ['telephone','Un numéro de téléphone pour vous rappeler ? (tapez « non » si vous préférez ne pas en laisser)'],
+    ['message','Décrivez brièvement votre besoin (service souhaité, type de site, fréquence…).']
+  ];
+  const svcList = SERVICES.map(s=>'• '+s.t).join('\n');
+  const find = n => SERVICES.find(s=>norm(s.t).includes(n));
+
+  const KB=[
+    {k:/^(bonjour|salut|bonsoir|hello|coucou|salam)/, a:()=>'Bonjour et bienvenue chez EL BARAKA CONSEIL. Comment puis-je vous aider ?', c:['Vos services','Demander un devis','Qui sommes-nous ?']},
+    {k:/service|prestation|offre|que faites|activite|domaine/, a:()=>'Nos services :\n'+svcList, c:['Gardiennage','Transport de fonds','Demander un devis']},
+    {k:/gardiennage|gardien|agent|accueil des visiteurs|controle d.acces/, a:()=>find('gardiennage').d, c:['Télésurveillance','Demander un devis']},
+    {k:/transport|fonds|argent|valeur|blind|produits? sensibles?/, a:()=>find('transport').d+'\n\n'+find('transfert').d, c:['Escorte','Demander un devis']},
+    {k:/escorte|accompagn/, a:()=>find('escorte').d, c:['Transport de fonds','Demander un devis']},
+    {k:/transfert/, a:()=>find('transfert').d, c:['Escorte','Demander un devis']},
+    {k:/telesurveillance|video|camera|temps reel|alarme/, a:()=>find('telesurveillance').d, c:['Surveillance des sites','Demander un devis']},
+    {k:/surveillance.*(site|infra)|infrastructure|site/, a:()=>find('surveillance des sites').d, c:['Télésurveillance','Demander un devis']},
+    {k:/cynophile|chien|canin|maitre/, a:()=>find('cynophiles').d, c:['Vos services','Demander un devis']},
+    {k:/incendie|feu|pompier/, a:()=>find('incendie').d, c:['Vos services','Demander un devis']},
+    {k:/protection.*(bien|personne)|proteger|personne/, a:()=>find('protection').d, c:['Gardiennage','Demander un devis']},
+    {k:/qui (etes|sommes)|societe|entreprise|a propos|presentation|histoire|creat|fond|1996|anciennete|experience|annee|sarl|capital/, a:()=>"Créée en 1996, S.A.R.L EL BARAKA CONSEIL est spécialisée dans le gardiennage, le transport de fonds et de produits sensibles, avec un capital social de 10.500.000 DA et plus de 25 ans d'expertise. Nous comptons plus de 200 employés.", c:['Vos services','Nos références']},
+    {k:/client|reference|partenaire|travaill.*avec/, a:()=>"Plus de 60 entreprises nous font confiance, parmi lesquelles Algérie Poste, BADR, ANBT ou Rizzani. Vous retrouvez leurs logos dans la section Références de cette page.", c:['Demander un devis']},
+    {k:/employe|effectif|equipe|personnel/, a:()=>"Nous comptons plus de 200 employés qualifiés, appuyés par des équipements de pointe.", c:['Recrutement','Vos services']},
+    {k:/recrut|emploi|travail|poste|candidat|postuler|cv|job|embauche/, a:()=>`Vous souhaitez nous rejoindre ? Remplissez le <a href="#recrutement">formulaire de recrutement</a> de cette page, votre candidature sera transmise à notre équipe.`, html:true},
+    {k:/confidential|discret|secret/, a:()=>'La confidentialité de nos relations clients est l\'un de nos engagements fondamentaux.', c:['Demander un devis']},
+    {k:/galerie|photo|image/, a:()=>`Retrouvez nos photos dans la <a href="#galerie">galerie</a>.`, html:true},
+    {k:/devis|tarif|prix|cout|combien|budget|proposition/, lead:true},
+    {k:/contact|joindre|telephone|appel|rappel|adresse|mail|rendez|rdv|parler|humain|conseiller/, lead:true},
+    {k:/merci|parfait|super|ok bien|au revoir|bye|a bientot/, a:()=>'Avec plaisir. N\'hésitez pas si vous avez d\'autres questions.', c:['Demander un devis']}
+  ];
+
+  function add(txt,who,html){
+    const d=document.createElement('div'); d.className='bub '+who;
+    html ? d.innerHTML=txt : d.textContent=txt;
+    B.appendChild(d); B.scrollTop=B.scrollHeight;
+    log.push((who==='me'?'Visiteur : ':'Assistant : ')+(html?txt.replace(/<[^>]+>/g,''):txt));
+  }
+  function chips(list){
+    if(!list||!list.length) return;
+    const w=document.createElement('div'); w.className='chips';
+    list.forEach(t=>{const b=document.createElement('button');b.type='button';b.className='chip';b.textContent=t;b.onclick=()=>{w.remove();handle(t)};w.appendChild(b)});
+    B.appendChild(w); B.scrollTop=B.scrollHeight;
+  }
+  function botSay(txt,c,html){
+    const t=document.createElement('div'); t.className='typing'; t.textContent='L\'assistant écrit…'; B.appendChild(t); B.scrollTop=B.scrollHeight;
+    setTimeout(()=>{t.remove();add(txt,'bot',html);chips(c)},380);
+  }
+  function startLead(){
+    mode='lead'; step=0; lead={}; pendingLead=false;
+    botSay('Avec plaisir. Je vais noter votre demande et la transmettre à notre équipe, qui vous recontactera. En poursuivant, vous acceptez que ces informations lui soient transmises (tapez « annuler » à tout moment pour arrêter).\n\n'+LEAD_STEPS[0][1]);
+  }
+  async function handleLead(txt){
+    const [key]=LEAD_STEPS[step];
+    if(/^annul/i.test(norm(txt))){mode='faq';return botSay('Demande annulée. Puis-je vous aider autrement ?',['Vos services','Demander un devis'])}
+    if(key==='email' && !/^\S+@\S+\.\S+$/.test(txt.trim())) return botSay('Cette adresse e-mail ne semble pas valide. Pouvez-vous la saisir à nouveau ?');
+    if(key==='telephone' && /^(non|no|aucun|pas)/.test(norm(txt))) txt='';
+    lead[key]=txt.trim(); step++;
+    if(step<LEAD_STEPS.length) return botSay(LEAD_STEPS[step][1]);
+    mode='sending';
+    botSay('Merci, j\'envoie votre demande…');
+    try{
+      await sendLead({nom:lead.nom,societe:lead.societe,email:lead.email,telephone:lead.telephone||'non communiqué',message:lead.message},'chatbot',log.join('\n'));
+      mode='faq';
+      botSay(`Merci ${lead.nom.split(' ')[0]}, votre demande a bien été transmise à notre équipe. Vous serez recontacté(e) à l'adresse ${lead.email}.`,['Vos services','Qui sommes-nous ?']);
+    }catch(e){
+      mode='lead'; step=LEAD_STEPS.length-1;
+      botSay('Désolé, l\'envoi a échoué. Renvoyez votre besoin pour réessayer, ou utilisez le formulaire de contact de la page.');
+    }
+  }
+  function handle(raw){
+    const txt=raw.trim(); if(!txt) return;
+    add(txt,'me');
+    Track.log('chat_message',{texte:txt.slice(0,60)});
+    if(mode==='lead') return handleLead(txt);
+    if(mode==='sending') return;
+    const n=norm(txt);
+    if(/^(oui|ok|d.accord)$/.test(n) && pendingLead) return startLead();
+    const hit=KB.find(x=>x.k.test(n));
+    if(hit){
+      if(hit.lead) return startLead();
+      return botSay(hit.a(),hit.c,hit.html);
+    }
+    pendingLead=true;
+    botSay('Je n\'ai pas d\'information précise à ce sujet. Souhaitez-vous laisser votre demande à notre équipe, qui vous répondra directement ?',['Demander un devis','Vos services']);
+  }
+  function open(){
+    panel.classList.add('open'); fab.setAttribute('aria-expanded','true'); I.focus();
+    if(!opened){opened=true;Track.log('chat_ouvert',{});
+      botSay('Bonjour ! Je suis l\'assistant d\'EL BARAKA CONSEIL. Je réponds à vos questions sur nos services, et je peux transmettre votre demande à notre équipe.',['Vos services','Qui sommes-nous ?','Demander un devis','Recrutement']);}
+  }
+  function close(){panel.classList.remove('open');fab.setAttribute('aria-expanded','false')}
+  fab.onclick=()=>panel.classList.contains('open')?close():open();
+  $('#chatX').onclick=close;
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&panel.classList.contains('open'))close()});
+  F.addEventListener('submit',e=>{e.preventDefault();const v=I.value;I.value='';handle(v)});
+})();
+</script>
+<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
+</body>
+</html>

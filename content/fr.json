@@ -1,0 +1,272 @@
+{
+  "meta": {
+    "title": "EL BARAKA CONSEIL | Gardiennage, sécurité privée et transport de fonds en Algérie",
+    "description": "Société de gardiennage et de sécurité privée à Jijel. Transport de fonds et de produits sensibles en Algérie depuis 1996. Plus de 500 agents. Demandez un devis."
+  },
+  "a11y": { "skip": "Aller au contenu" },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "gallery": "Galerie",
+    "recruitment": "Recrutement",
+    "contact": "Contactez-nous",
+    "open": "Ouvrir le menu",
+    "close": "Fermer le menu",
+    "back": "Retour",
+    "language": "Langue",
+    "tagline": "Société de gardiennage"
+  },
+  "hero": {
+    "kicker": "Sécurité privée en Algérie",
+    "lines": ["Gardiennage et", "transport de fonds", "pour votre sécurité"],
+    "titleA": "Gardiennage et transport de fonds",
+    "titleB": "pour votre sécurité",
+    "subtitle": "Depuis 1996 à Jijel, nous protégeons vos sites, vos équipes et vos flux sensibles : gardiennage, sécurité privée et transport de fonds.",
+    "trustSince": "Depuis 1996",
+    "trustCity": "Jijel",
+    "trustLicensed": "Agréé",
+    "contact": "Contactez-nous",
+    "quote": "Demander un devis",
+    "call": "Appeler",
+    "whatsapp": "WhatsApp",
+    "join": "Rejoignez-nous",
+    "scroll": "Défiler"
+  },
+  "stats": {
+    "years": "ans d'expérience",
+    "employees": "agents",
+    "partners": "partenaires",
+    "services": "services"
+  },
+  "marquee": {
+    "title": "Rejoignez les 100+ entreprises qui nous font confiance"
+  },
+  "about": {
+    "eyebrow": "À propos d'EL BARAKA CONSEIL",
+    "title": "Une expertise de plus de 30 ans au service de votre protection",
+    "p1": "Créée en <b>1996</b>, S.A.R.L. EL BARAKA CONSEIL est une société spécialisée dans le gardiennage, le transport de fonds et de produits sensibles. Avec un capital social de <b>10.500.000</b> DA, grâce à nos moyens déployés et à notre expertise de plus de <b>30</b> ans, nous garantissons une prestation de qualité, adaptée à vos besoins spécifiques, tout en assurant la confidentialité de nos relations et en respectant la réglementation en vigueur.",
+    "p2": "Plus de <b>500</b> professionnels à votre service. Faites confiance à une équipe formée, à des véhicules aménagés et à des protocoles stricts.",
+    "founded": "Créée en 1996",
+    "legal": "S.A.R.L.",
+    "capital": "Capital social",
+    "cta": "Contactez-nous",
+    "alt": "Agent EL BARAKA CONSEIL devant le portail bleu, à Jijel",
+    "stats": "Depuis {year}, plus de <emp>500</emp> professionnels protègent plus de <part>100</part> partenaires, sur <svc>9</svc> services."
+  },
+  "timeline": {
+    "eyebrow": "Depuis 1996",
+    "title": "Depuis 1996"
+  },
+  "partners": {
+    "title": "Plus de 100 entreprises nous confient leur sécurité.",
+    "more": "+ {count} partenaires"
+  },
+  "servicesSection": {
+    "eyebrow": "Services",
+    "title": "Services",
+    "view": "Voir le service",
+    "intro": "De la surveillance des sites au transport de fonds et à la sécurisation de produits sensibles, nos équipes qualifiées interviennent avec des protocoles stricts et des véhicules aménagés.",
+    "more": "En savoir plus",
+    "back": "Tous les services",
+    "ask": "Demander ce service"
+  },
+  "why": {
+    "eyebrow": "Pourquoi nous choisir",
+    "title": "Ce que nous tenons",
+    "lead": "La protection de vos sites, de vos équipes et de vos flux sensibles repose sur des moyens concrets.",
+    "pillars": [
+      {
+        "title": "Personnel qualifié et formé",
+        "text": "Des agents sélectionnés, formés et encadrés, présents avec une discipline de service constante."
+      },
+      {
+        "title": "Véhicules aménagés",
+        "text": "Le transport de fonds et de produits sensibles s'appuie sur des véhicules aménagés et des protocoles stricts."
+      },
+      {
+        "title": "Confidentialité",
+        "text": "La discrétion de nos relations et le respect de la réglementation en vigueur sont au cœur de chaque mission."
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Galerie",
+    "title": "Nos équipes en situation",
+    "intro": "Quelques images de nos interventions sur le terrain et de nos activités de sécurité.",
+    "all": "Tout",
+    "field": "Sur le terrain",
+    "inside": "À l'intérieur de la sécurité",
+    "close": "Fermer",
+    "prev": "Photo précédente",
+    "next": "Photo suivante",
+    "empty": "Aucune image pour le moment."
+  },
+  "recruitment": {
+    "eyebrow": "Recrutement",
+    "title": "Plus de 500 professionnels à votre service",
+    "intro": "Rejoignez une société de référence du gardiennage, de la sécurisation et du transport de fonds et de produits sensibles. Votre candidature est transmise directement à notre équipe.",
+    "openings": "Postes ouverts",
+    "none": "Aucune offre n'est publiée pour le moment. Les candidatures spontanées sont les bienvenues.",
+    "apply": "Postuler"
+  },
+  "contact": {
+    "eyebrow": "Contactez-nous",
+    "title": "Demander un devis de sécurité",
+    "intro": "Décrivez votre besoin de gardiennage, de sécurité privée ou de transport de fonds. Un membre de l'équipe vous répond.",
+    "phone": "Téléphone fixe",
+    "fax": "Fax",
+    "address": "Adresse",
+    "email": "E-mail",
+    "hours": "Horaires",
+    "route": "Itinéraire",
+    "map": "Carte : siège social à Jijel",
+    "homeCta": "Écrire à l'équipe"
+  },
+  "footer": {
+    "blurb": "Gardiennage, sécurisation, transport de fonds et produits sensibles. Plus de 30 ans d'expérience. Siège social à Jijel.",
+    "company": "Entreprise",
+    "services": "Services",
+    "visit": "Galerie et recrutement",
+    "rights": "Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "cookies": "Cookies",
+    "manage": "Gérer les cookies"
+  },
+  "consent": {
+    "title": "Votre vie privée",
+    "body": "Nous mesurons l'audience pour améliorer le site. Aucun cookie de statistique n'est déposé sans votre accord. Si vous refusez, seuls des compteurs anonymes sont conservés : pas de cookie, pas d'adresse IP.",
+    "necessary": "Nécessaires",
+    "necessaryHelp": "Sécurité et mémorisation de ce choix. Toujours actifs.",
+    "analytics": "Statistiques",
+    "analyticsHelp": "Pages consultées, appareil et provenance, pendant 13 mois. Google Analytics n'est chargé que si vous acceptez.",
+    "marketing": "Marketing",
+    "marketingHelp": "Réservé. Aucun cookie publicitaire n'est utilisé pour le moment.",
+    "accept": "Accepter tout",
+    "reject": "Refuser",
+    "customize": "Personnaliser",
+    "save": "Enregistrer"
+  },
+  "forms": {
+    "name": "Nom",
+    "company": "Entreprise",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "city": "Ville",
+    "phoneOptional": "Téléphone (facultatif)",
+    "message": "Votre besoin",
+    "service": "Besoin",
+    "need": "Besoin",
+    "serviceAny": "Sélectionnez un besoin",
+    "position": "Poste souhaité",
+    "cv": "CV (PDF, 5 Mo maximum)",
+    "send": "Envoyer la demande",
+    "quote": "Demander un devis",
+    "apply": "Postuler",
+    "sending": "Envoi en cours…",
+    "contactOk": "Demande envoyée.",
+    "jobOk": "Candidature envoyée.",
+    "error": "L'envoi a échoué. Réessayez dans un instant.",
+    "invalid": "Vérifiez les champs obligatoires.",
+    "emailInvalid": "L'adresse email n'est pas valide. Vérifiez le format : nom@exemple.dz.",
+    "rate": "Trop de tentatives. Merci de réessayer plus tard.",
+    "consent": "J'accepte que ces informations soient transmises à EL BARAKA CONSEIL afin de traiter ma demande, conformément à la loi 18-07.",
+    "jobConsent": "J'accepte que ces informations soient transmises à EL BARAKA CONSEIL pour le traitement de ma candidature."
+  },
+  "home": {
+    "splitTitle": "Une sécurité privée qui s'adapte\nà votre façon de travailler",
+    "servicesLead": "Gardiennage, sécurité privée, transport de fonds, télésurveillance. Du site fixe au convoi, nos équipes protègent vos biens, vos personnes et vos produits sensibles."
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "intro": "Gardiennage, sécurité privée et transport de fonds en Algérie.",
+    "items": [
+      {
+        "q": "Qu'est-ce que le gardiennage ?",
+        "a": "Le gardiennage est la surveillance et la protection d'un site par des agents formés : présence, rondes et respect des consignes du client. EL BARAKA CONSEIL assure cette mission depuis 1996."
+      },
+      {
+        "q": "Quelle est la différence entre gardiennage et sécurité privée ?",
+        "a": "Le gardiennage est une mission de sécurité privée. Il s'agit de protéger des biens, des personnes et des sites, dans le respect de la réglementation en vigueur."
+      },
+      {
+        "q": "Proposez-vous le transport de fonds en Algérie ?",
+        "a": "Oui. Le transport de fonds et de produits sensibles fait partie des services, avec des véhicules aménagés et des protocoles stricts."
+      },
+      {
+        "q": "Dans quelles villes intervenez-vous ?",
+        "a": "Le siège social est à Jijel. Le devis précise la zone, les moyens et le dispositif selon le site à protéger."
+      },
+      {
+        "q": "Comment demander un devis de gardiennage ?",
+        "a": "Indiquez votre nom, votre entreprise, votre téléphone, votre e-mail, votre ville et votre besoin. La demande est envoyée par e-mail à l'équipe."
+      },
+      {
+        "q": "Depuis quand existe EL BARAKA CONSEIL ?",
+        "a": "La société a été créée en 1996 à Jijel. Elle réunit plus de 500 agents et plus de 30 ans d'expérience."
+      }
+    ]
+  },
+  "whatsapp": {
+    "tooltip": "Une question ? Écrivez-nous",
+    "open": "Écrire sur WhatsApp"
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "body": "Cette page n'existe pas ou a été déplacée.",
+    "back": "Retour à l'accueil"
+  },
+  "errorPage": {
+    "title": "Une erreur est survenue",
+    "body": "Merci de réessayer dans un instant.",
+    "retry": "Réessayer"
+  },
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "intro": "S.A.R.L. EL BARAKA CONSEIL, siège social à Jijel, traite des données personnelles dans le cadre de son site, conformément à la loi algérienne n° 18-07 du 10 juin 2018 relative à la protection des personnes physiques dans le traitement des données à caractère personnel.",
+    "sections": [
+      {
+        "title": "Responsable",
+        "body": "S.A.R.L. EL BARAKA CONSEIL — téléphone 021 59 59 59, fax 021 58 58 58, siège social à Jijel. Les messages du formulaire sont adressés à l'e-mail de contact configuré pour le site."
+      },
+      {
+        "title": "Données collectées",
+        "body": "Formulaire de contact : nom, e-mail, téléphone éventuel, message. Candidature : nom, e-mail, téléphone, poste, message et CV. Avec votre accord statistique : identifiant visiteur, pages vues, provenance, type d'appareil, pays. Sans accord : uniquement des compteurs anonymes (page, jour, pays), sans cookie et sans adresse IP. L'adresse IP n'est jamais enregistrée en clair : seul un condensat salé peut être calculé, puis écarté."
+      },
+      {
+        "title": "Finalités",
+        "body": "Répondre à vos demandes, étudier les candidatures, sécuriser le site (limitation des envois) et, si vous l'acceptez, mesurer l'audience. Aucune vente de données. Le marketing est prévu dans le bandeau mais aucun cookie publicitaire n'est déposé."
+      },
+      {
+        "title": "Durées",
+        "body": "Messages et candidatures : le temps du traitement, puis archivage limité aux obligations utiles. Cookie de choix : 12 mois. Identifiant visiteur statistique : 13 mois. Compteurs anonymes identifiants : 24 heures, les volumes de pages pouvant être conservés sans identifiant."
+      },
+      {
+        "title": "Vos droits",
+        "body": "Vous pouvez demander l'accès, la rectification ou la suppression de vos données, et retirer votre accord via « Gérer les cookies ». Écrivez-nous depuis la page Contact. Vous pouvez aussi saisir l'Autorité nationale de protection des données à caractère personnel (ANPDP)."
+      }
+    ]
+  },
+  "cookiePage": {
+    "title": "Cookies",
+    "intro": "Ce site dépose peu de cookies. Vous choisissez les catégories autres que les cookies nécessaires.",
+    "sections": [
+      {
+        "title": "Nécessaires",
+        "body": "Mémorisation de votre choix (eb_consent, 12 mois) et, côté administration seulement, session de connexion. Ils ne servent pas à vous suivre d'un site à l'autre."
+      },
+      {
+        "title": "Statistiques",
+        "body": "Si vous acceptez : eb_vid (13 mois) et eb_sid (session d'environ 30 minutes). Ils permettent de compter les visites, les pages et les appareils. Si vous refusez, aucun de ces cookies n'est créé."
+      },
+      {
+        "title": "Marketing",
+        "body": "Catégorie réservée. Elle n'est pas utilisée tant qu'aucun outil publicitaire n'est ajouté."
+      },
+      {
+        "title": "Modifier votre choix",
+        "body": "Le lien « Gérer les cookies » en pied de page rouvre le bandeau à tout moment."
+      }
+    ]
+  }
+}

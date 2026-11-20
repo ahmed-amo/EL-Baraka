@@ -87,18 +87,24 @@ main { position: relative; z-index: 1; }
   max-width: calc(100vw - 48px);
   height: 60px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px) saturate(1.1);
+  -webkit-backdrop-filter: blur(16px) saturate(1.1);
   display: flex;
   align-items: center;
   padding: 0 18px 0 22px;
-  box-shadow: 0 1px 0 rgba(0, 15, 54, 0.06), 0 10px 30px -18px rgba(0, 15, 54, 0.35);
+  /* No 1px hairline — it flashes gray while content scrolls under the pill */
+  box-shadow: 0 12px 32px -20px rgba(0, 15, 54, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  overflow: hidden;
+  isolation: isolate;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   opacity: 0;
-  transform: translate(-50%, -8px);
+  transform: translate3d(-50%, -8px, 0);
   animation: navin 0.9s var(--ease) 0.15s forwards;
 }
-@keyframes navin { to { opacity: 1; transform: translate(-50%, 0); } }
+@keyframes navin { to { opacity: 1; transform: translate3d(-50%, 0, 0); } }
 .brand { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.02em; color: var(--ink); }
 .brand img { height: 40px; width: auto; }
 .navlinks {
@@ -725,7 +731,8 @@ textarea.pill-area {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .nav, .fade-up, #row { animation: none; opacity: 1; transform: none; }
+  .nav { animation: none; opacity: 1; transform: translate3d(-50%, 0, 0); }
+  .fade-up, #row { animation: none; opacity: 1; transform: none; }
   .marquee ul { animation: none; }
   .tile .pic img, .btn .dot, .navcta { transition: none; }
 }

@@ -32,7 +32,6 @@ export function Navbar({ contact }: { contact: NavContact }) {
   const pathname = usePathname();
   const router = useRouter();
   const [open, setOpen] = useState(false);
-  const home = pathname === "/";
 
   function scrollToId(id: string) {
     const target = document.getElementById(id);
@@ -64,7 +63,7 @@ export function Navbar({ contact }: { contact: NavContact }) {
 
   return (
     <>
-      <header id="nav" className={home ? "nav" : "nav on"}>
+      <header id="nav" className="nav">
         <Link href="/#accueil" className="brand" aria-label="El Baraka Conseil" scroll={false} onClick={(event) => onSectionClick(event, "/#accueil")}>
           <Image src="/Elbaraka-Logo.png" alt="" width={64} height={64} priority />
           El Baraka Conseil

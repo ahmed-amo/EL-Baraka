@@ -14,11 +14,9 @@ export function Atmosphere() {
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const nav = document.getElementById("nav");
     document.body.classList.add("ready");
 
     if (!home || reduce) {
-      if (!home) nav?.classList.add("on");
       document.querySelector(".chiffres")?.classList.add("in");
       return;
     }

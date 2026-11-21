@@ -18,13 +18,13 @@ export default async function MessagesPage({ searchParams }: { searchParams: Pro
     ...(status ? { status } : {}),
     ...(sp.q
       ? {
-          OR: [
-            { name: { contains: sp.q, mode: "insensitive" as const } },
-            { email: { contains: sp.q, mode: "insensitive" as const } },
-            { company: { contains: sp.q, mode: "insensitive" as const } },
-            { city: { contains: sp.q, mode: "insensitive" as const } },
-            { message: { contains: sp.q, mode: "insensitive" as const } },
-          ],
+            OR: [
+              { name: { contains: sp.q } },
+              { email: { contains: sp.q } },
+              { company: { contains: sp.q } },
+              { city: { contains: sp.q } },
+              { message: { contains: sp.q } },
+            ],
         }
       : {}),
   };

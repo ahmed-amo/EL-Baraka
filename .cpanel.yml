@@ -1,10 +1,11 @@
 ---
 deployment:
   tasks:
-    - export PATH=/home/elbarakaconseil/nodevenv/EL-Baraka/24/bin:$PATH
-    - /home/elbarakaconseil/nodevenv/EL-Baraka/24/bin/npm install
-    - /home/elbarakaconseil/nodevenv/EL-Baraka/24/bin/npx prisma db push
-    - /home/elbarakaconseil/nodevenv/EL-Baraka/24/bin/npm run db:seed
-    - /home/elbarakaconseil/nodevenv/EL-Baraka/24/bin/npm run build
-    - /bin/mkdir -p /home/elbarakaconseil/EL-Baraka/tmp /home/elbarakaconseil/EL-Baraka/logs
-    - /bin/touch /home/elbarakaconseil/EL-Baraka/tmp/restart.txt
+    - export PATH=/home/elbarakaconseil/nodevenv/repositories/EL-Baraka/24/bin:$PATH
+    - /home/elbarakaconseil/nodevenv/repositories/EL-Baraka/24/bin/npm install
+    - /home/elbarakaconseil/nodevenv/repositories/EL-Baraka/24/bin/npx prisma db push
+    - /home/elbarakaconseil/nodevenv/repositories/EL-Baraka/24/bin/npm run db:seed
+    - /home/elbarakaconseil/nodevenv/repositories/EL-Baraka/24/bin/npm run build
+    - /bin/mkdir -p /home/elbarakaconseil/repositories/EL-Baraka/tmp
+    - /bin/mkdir -p /home/elbarakaconseil/repositories/EL-Baraka/logs
+    - /bin/touch /home/elbarakaconseil/repositories/EL-Baraka/tmp/restart.txt

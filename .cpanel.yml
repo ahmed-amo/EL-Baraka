@@ -1,4 +1,4 @@
 ---
 deployment:
   tasks:
-    - /bin/bash -lc 'source /home/elbarakaconseil/nodevenv/repositories/EL-Baraka/24/bin/activate && cd /home/elbarakaconseil/repositories/EL-Baraka && npm install && npx prisma db push && npm run build && mkdir -p tmp logs && touch tmp/restart.txt'
+    - /bin/bash -c "mkdir -p /home/elbarakaconseil/repositories/EL-Baraka/logs; { echo '=== START ==='; date; echo '--- nodevenv ---'; ls -la /home/elbarakaconseil/nodevenv/repositories/EL-Baraka/ || true; ls -la /home/elbarakaconseil/nodevenv/repositories/EL-Baraka/24/bin/ || true; export PATH=/home/elbarakaconseil/nodevenv/repositories/EL-Baraka/24/bin:/usr/bin:/bin; cd /home/elbarakaconseil/repositories/EL-Baraka || exit 1; echo '--- versions ---'; command -v node; command -v npm; node -v; npm -v; echo '--- .env ---'; if [ -f .env ]; then echo '.env present'; else echo 'MISSING .env'; fi; echo '--- npm install ---'; npm install; echo '--- prisma db push ---'; npx prisma db push; echo '--- npm run build ---'; npm run build; mkdir -p tmp; touch tmp/restart.txt; echo '=== DONE ==='; } > /home/elbarakaconseil/repositories/EL-Baraka/logs/deploy.log 2>&1"

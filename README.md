@@ -1,6 +1,6 @@
 # EL BARAKA CONSEIL
 
-Site de S.A.R.L. EL BARAKA CONSEIL (Jijel) : gardiennage, sécurisation, transport de fonds et de produits sensibles. Next.js 15, Prisma, MySQL, espace d'administration.
+Site de S.A.R.L. EL BARAKA CONSEIL (Jijel) : gardiennage, sécurisation, transport de fonds et de produits sensibles. Next.js 15, Prisma, MariaDB, espace d'administration.
 
 Les choix de contenu sont notés dans `DECISIONS.md`.
 
@@ -13,7 +13,7 @@ cp .env.example .env
 
 Renseigner au minimum `DATABASE_URL`, `AUTH_SECRET`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `IP_HASH_SALT`, `MAIL_TO` et `NEXT_PUBLIC_SITE_URL`.
 
-MySQL local (Docker) :
+MariaDB local (Docker) :
 
 ```bash
 npm run db:up
@@ -39,7 +39,7 @@ Voir `.env.example`.
 
 | Variable | Rôle |
 | --- | --- |
-| `DATABASE_URL` | MySQL (cPanel ou Docker local) |
+| `DATABASE_URL` | MariaDB (cPanel) ou Docker local — URL `mysql://…` |
 | `AUTH_SECRET` | Signature du cookie de session |
 | `ADMIN_EMAIL` / `ADMIN_PASSWORD` | **Seed uniquement** |
 | `SMTP_*`, `MAIL_FROM`, `MAIL_TO` | Réception des messages et des candidatures |

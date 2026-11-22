@@ -2,6 +2,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// MariaDB on cPanel (and local Docker). Prisma uses the mysql provider for MariaDB.
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")

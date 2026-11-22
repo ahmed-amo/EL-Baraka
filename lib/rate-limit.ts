@@ -38,7 +38,7 @@ async function limitUpstash(key: string, limit: number, windowMs: number) {
 
 /**
  * Prefer Upstash, then in-process memory.
- * Avoid Postgres rate-limit rows — they cost more than the requests they protect on a small Railway box.
+ * Avoid DB rate-limit rows — they cost more than the requests they protect on a small host.
  */
 export async function rateLimit(key: string, limit: number, windowMs: number) {
   try {

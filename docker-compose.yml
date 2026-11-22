@@ -1,6 +1,6 @@
 services:
   db:
-    image: mysql:8.4
+    image: mariadb:11.4
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: baraka
@@ -9,9 +9,9 @@ services:
       MYSQL_PASSWORD: baraka
     ports:
       - "3306:3306"
-    command: ["--default-authentication-plugin=caching_sha2_password", "--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]
     volumes:
-      - baraka_mysql:/var/lib/mysql
+      - baraka_mariadb:/var/lib/mysql
 
 volumes:
-  baraka_mysql:
+  baraka_mariadb:

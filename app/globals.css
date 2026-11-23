@@ -1069,3 +1069,6 @@ textarea.pill-area {
   .dash-live-dot { animation: none; }
   .admin-btn:hover, .dash-stat.is-link:hover { transform: none; }
 }
+
+.cookie-card .row { flex-wrap: wrap; }
+.cookie-card .btn { padding: 0 16px; }

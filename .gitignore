@@ -9,6 +9,8 @@ storage
 public/uploads
 public/videos/*.mp4
 public/*.mp4
+tmp/
+logs/
 *.log
 .DS_Store
 coverage

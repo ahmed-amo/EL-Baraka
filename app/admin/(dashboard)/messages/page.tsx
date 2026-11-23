@@ -1,3 +1,4 @@
+import type { Prisma } from "@prisma/client";
 import { Archive, Mail, MailOpen, Reply, RotateCcw, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { deleteMessage, retryMessage, setMessageStatus } from "@/app/admin/actions";
@@ -14,7 +15,7 @@ export default async function MessagesPage({ searchParams }: { searchParams: Pro
   const db = getPrisma();
   if (!db) return <p>Base de données indisponible.</p>;
   const status = sp.status === "READ" || sp.status === "ARCHIVED" || sp.status === "NEW" ? sp.status : undefined;
-  const where = {
+  const where: Prisma.ContactMessageWhereInput = {
     ...(status ? { status } : {}),
     ...(sp.q
       ? {

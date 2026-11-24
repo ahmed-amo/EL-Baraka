@@ -10,6 +10,7 @@ import { GoogleAnalytics } from "@/components/site/google-analytics";
 import { JsonLd } from "@/components/site/json-ld";
 import { Navbar } from "@/components/site/navbar";
 import { Tracker } from "@/components/site/tracker";
+import { SiteChatbot } from "@/components/site/site-chatbot";
 import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { getSiteData } from "@/lib/site-data";
@@ -93,6 +94,29 @@ export default async function LocaleLayout({
             services={site.services.map((service) => ({ slug: service.slug, title: service.title }))}
           />
         ) : null}
+        <SiteChatbot
+          lift={Boolean(site.settings.whatsappNumber)}
+          facts={{
+            legalName: site.settings.legalName,
+            phone: site.settings.phone,
+            phoneHref: site.settings.phoneHref,
+            fax: site.settings.fax,
+            email: site.settings.email,
+            address: site.settings.address,
+            hours: site.settings.hours,
+            capital: site.settings.capital,
+            foundedYear: site.settings.foundedYear,
+            years: site.settings.years,
+            employees: site.settings.employees,
+            partners: site.settings.partners,
+            servicesCount: site.settings.servicesCount,
+            whatsappNumber: site.settings.whatsappNumber,
+            services: site.services.map((service) => ({
+              title: service.title,
+              shortDescription: service.shortDescription,
+            })),
+          }}
+        />
         <CookieBanner />
         <Tracker />
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ? <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} /> : null}

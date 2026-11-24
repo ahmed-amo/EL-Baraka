@@ -109,16 +109,14 @@ export async function HomePage({ site }: { site: PublicSite }) {
           </div>
         </div>
         <div className="r">
-          {settings.heroVideoUrl ? (
-            <video id="ship" autoPlay muted loop playsInline preload="metadata" poster={poster}>
-              {settings.heroVideoWebmUrl ? <source src={settings.heroVideoWebmUrl} type="video/webm" /> : null}
-              <source src={settings.heroVideoUrl} type="video/mp4" />
-            </video>
-          ) : (
-            <div id="ship">
-              <Image src={poster} alt="Agent de gardiennage devant un portail bleu à Jijel" fill priority sizes="42vw" />
-            </div>
-          )}
+          <div id="ship">
+            <Image
+              src="/images/gallery/field-watch.jpg"
+              alt="Agent EL BARAKA CONSEIL en surveillance sur site"
+              fill
+              sizes="42vw"
+            />
+          </div>
         </div>
       </section>
 
@@ -158,7 +156,7 @@ export async function HomePage({ site }: { site: PublicSite }) {
         <RevealTitle className="section-title js-reveal">Sur le terrain</RevealTitle>
         <GalleryStrip images={gallery} field={t("gallery.field")} inside={t("gallery.inside")} />
         <div className="mt-8">
-          <DotButton href="/galerie">Voir la galerie</DotButton>
+          <DotButton href="/galerie">{t("nav.gallery")}</DotButton>
         </div>
       </section>
 

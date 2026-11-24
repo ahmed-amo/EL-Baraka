@@ -36,6 +36,7 @@ export async function HeroSection({ video, poster, phone, phoneHref }: Props) {
             <li>{t("trustSince")}</li>
             <li>{t("trustCity")}</li>
             <li>{t("trustLicensed")}</li>
+            <li>{t("trustSensitive")}</li>
           </ul>
           <div className="hero-actions hero-rise" style={{ ["--d" as string]: "280ms" }}>
             <Link href="/contact" className="hero-btn-primary">

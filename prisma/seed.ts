@@ -50,7 +50,9 @@ async function main() {
   const settings = defaultSettings();
   await prisma.siteSettings.upsert({
     where: { id: "singleton" },
-    update: {},
+    update: {
+      aboutImageUrl: settings.aboutImageUrl,
+    },
     create: {
       id: "singleton",
       ...settings,
@@ -85,6 +87,12 @@ async function main() {
       })),
     });
   } else {
+    for (const service of serviceSeed) {
+      await prisma.service.updateMany({
+        where: { slug: service.slug },
+        data: { imageUrl: service.imageUrl },
+      });
+    }
     const securisation = serviceSeed.find((service) => service.slug === "securisation-de-produits-sensibles");
     if (securisation && !(await prisma.service.findUnique({ where: { slug: securisation.slug } }))) {
       await prisma.service.updateMany({ where: { order: { gte: 3 } }, data: { order: { increment: 1 } } });
@@ -113,6 +121,21 @@ async function main() {
         isActive: true,
       })),
     });
+  } else {
+    for (const image of gallerySeed) {
+      const existing = await prisma.galleryImage.findFirst({ where: { url: image.url } });
+      if (!existing) {
+        await prisma.galleryImage.create({
+          data: {
+            url: image.url,
+            alt: image.alt,
+            category: image.category,
+            order: image.order,
+            isActive: true,
+          },
+        });
+      }
+    }
   }
   if ((await prisma.milestone.count()) === 0) {
     await prisma.milestone.createMany({
@@ -125,6 +148,13 @@ async function main() {
         isActive: true,
       })),
     });
+  } else {
+    for (const [index, item] of milestoneSeed.entries()) {
+      await prisma.milestone.updateMany({
+        where: { year: item.year, title: item.title },
+        data: { imageUrl: item.image, order: index + 1 },
+      });
+    }
   }
 
   const assets = [
@@ -136,7 +166,7 @@ async function main() {
   for (const asset of assets) {
     await prisma.mediaAsset.upsert({
       where: { key: asset.key },
-      update: {},
+      update: asset.key === "about_image" ? { url: asset.url } : {},
       create: asset,
     });
   }

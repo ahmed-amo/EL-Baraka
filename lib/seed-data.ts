@@ -1,4 +1,4 @@
-import { GATE_CLOSE, GATE_PHOTO } from "./brand";
+import { GATE_PHOTO } from "./brand";
 import type { CompanyData, GalleryData, Milestone, PublicSite, ServiceData, SiteSettingsData } from "./types";
 
 export const MAPS_URL = "https://maps.app.goo.gl/9k3HuhUXRnFBsd4v8";
@@ -21,7 +21,7 @@ export const defaultSettings = (): SiteSettingsData => ({
   heroVideoUrl: "/videos/hero.mp4",
   heroVideoWebmUrl: "",
   heroPosterUrl: GATE_PHOTO,
-  aboutImageUrl: GATE_CLOSE,
+  aboutImageUrl: "/images/gallery/hq-facade.jpg",
   lat: 36.823443,
   lng: 5.76469,
   hours: "Dimanche – Jeudi · 08h00 – 17h00",
@@ -43,37 +43,37 @@ export const milestoneSeed: Milestone[] = [
     year: "1996",
     title: "Création",
     text: "Naissance de la S.A.R.L. EL BARAKA CONSEIL à Jijel.",
-    image: GATE_CLOSE,
+    image: "/images/gallery/hq-facade.jpg",
   },
   {
     year: "2005",
     title: "Gardiennage",
     text: "{{À CONFIRMER}} Déploiement des équipes de gardiennage et de protection des sites.",
-    image: "/images/services/IMG_2665.jpg",
+    image: "/images/gallery/field-site.jpg",
   },
   {
     year: "2012",
     title: "Flux sensibles",
     text: "{{À CONFIRMER}} Extension du transport de fonds et de la sécurisation de produits sensibles.",
-    image: "/images/services/IMG_1381.jpg",
+    image: "/images/gallery/field-safe.jpg",
   },
   {
     year: "2018",
     title: "Moyens renforcés",
     text: "{{À CONFIRMER}} Télésurveillance et activités cynophiles viennent compléter les dispositifs.",
-    image: "/images/services/IMG_1514.jpg",
+    image: "/images/gallery/field-cyno.jpg",
   },
   {
     year: "2024",
     title: "500 professionnels",
     text: "Plus de 500 professionnels à votre service, en Algérie.",
-    image: "/images/services/IMG_2791.jpg",
+    image: "/images/gallery/field-team.jpg",
   },
   {
     year: "Aujourd'hui",
     title: "30+ ans",
     text: "Plus de 30 ans d'expérience auprès des entreprises et des institutions.",
-    image: "/images/services/IMG_3028.jpg",
+    image: "/images/gallery/field-watch.jpg",
   },
 ];
 
@@ -90,7 +90,7 @@ export const serviceSeed: ServiceData[] = [
       "Nous assurons la sécurité de vos biens et de vos personnes grâce à des solutions adaptées et un personnel qualifié, garantissant ainsi une protection efficace contre les risques potentiels.",
       "Chaque dispositif est construit autour de votre site, de vos horaires et de vos flux. Les agents sont formés, identifiables et encadrés, avec des consignes claires et une remontée d'information régulière.",
     ),
-    imageUrl: "/images/services/IMG_2791.jpg",
+    imageUrl: "/images/gallery/field-watch.jpg",
     icon: "Shield",
     order: 1,
   },
@@ -104,7 +104,7 @@ export const serviceSeed: ServiceData[] = [
       "Nos services de gardiennage incluent la surveillance des sites, le contrôle des accès et l'accueil des visiteurs, assurant un environnement sécurisé et bien régulé.",
       "Rondes, filtrage, main courante et présence visible : le gardiennage EL BARAKA CONSEIL s'adapte aux sites industriels, tertiaires et institutionnels.",
     ),
-    imageUrl: "/images/services/IMG_2665.jpg",
+    imageUrl: "/images/gallery/field-site.jpg",
     icon: "Eye",
     order: 2,
   },
@@ -118,7 +118,7 @@ export const serviceSeed: ServiceData[] = [
       "La sécurisation de produits sensibles couvre le chargement, le parcours et la remise, avec des véhicules aménagés et des protocoles stricts.",
       "Le dispositif est préparé avec le donneur d'ordre. La confidentialité de l'opération et le respect de la réglementation en vigueur font partie du service.",
     ),
-    imageUrl: "/images/gallery/IMG_1440.jpg",
+    imageUrl: "/images/gallery/field-team.jpg",
     icon: "Package",
     order: 3,
   },
@@ -132,7 +132,7 @@ export const serviceSeed: ServiceData[] = [
       "Sécurisation de produits sensibles. Notre équipe qualifiée garantit la protection de vos biens tout au long du trajet grâce à des véhicules aménagés et des protocoles stricts pour assurer le transport de vos produits sensibles.",
       "Le parcours, les horaires et les points de remise sont préparés à l'avance. La confidentialité de l'opération et le respect de la réglementation en vigueur font partie du dispositif.",
     ),
-    imageUrl: "/images/services/IMG_1381.jpg",
+    imageUrl: "/images/gallery/field-convoy.jpg",
     icon: "Package",
     order: 4,
   },
@@ -146,7 +146,7 @@ export const serviceSeed: ServiceData[] = [
       "Le transport sécurisé de vos fonds, avec nos véhicules aménagés et des protocoles stricts, garantissant une sécurité maximale.",
       "Collecte, acheminement et remise suivent une chaîne de contrôle définie avec vous. Les équipes sont formées à la discrétion et à la régularité du service.",
     ),
-    imageUrl: "/images/services/IMG_2265.jpg",
+    imageUrl: "/images/gallery/field-safe.jpg",
     icon: "Landmark",
     order: 6,
   },
@@ -174,7 +174,7 @@ export const serviceSeed: ServiceData[] = [
       "Nos équipes effectuent une surveillance continue des sites et des infrastructures pour détecter toute activité suspecte et assurer une sécurité constante.",
       "Le dispositif couvre les accès, les périmètres et les points sensibles, avec des comptes rendus exploitables par vos responsables.",
     ),
-    imageUrl: "/images/services/IMG_3028.jpg",
+    imageUrl: "/images/gallery/field-site.jpg",
     icon: "Building2",
     order: 8,
   },
@@ -188,7 +188,7 @@ export const serviceSeed: ServiceData[] = [
       "Nous utilisons des chiens de sécurité spécialement formés pour renforcer la protection des sites et effectuer des interventions en cas de besoin.",
       "Les équipes cynophiles interviennent en complément du gardiennage, selon le niveau de sensibilité du site.",
     ),
-    imageUrl: "/images/services/IMG_2646.jpg",
+    imageUrl: "/images/gallery/field-cyno.jpg",
     icon: "Dog",
     order: 9,
   },
@@ -207,16 +207,20 @@ export const companySeed: CompanyData[] = [
 ];
 
 const field = [
+  "field-convoy.jpg",
+  "field-safe.jpg",
+  "field-team.jpg",
+  "field-cyno.jpg",
+  "field-watch.jpg",
+  "field-site.jpg",
   "IMG_1440.jpg",
   "IMG_1550.jpg",
   "IMG_1422.jpg",
   "IMG_1433.jpg",
-  "IMG_1397.jpg",
-  "IMG_1449.jpg",
   "IMG_2645.jpg",
   "IMG_3019.jpg",
 ];
-const inside = ["IMG_1456.jpg", "IMG_1514.jpg", "IMG_1519.jpg", "IMG_2843.jpg"];
+const inside = ["hq-facade.jpg", "IMG_1456.jpg", "IMG_1514.jpg", "IMG_1519.jpg", "IMG_2843.jpg"];
 
 export const gallerySeed: GalleryData[] = [
   ...field.map((file, index) => ({

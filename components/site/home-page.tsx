@@ -21,7 +21,7 @@ export async function HomePage({ site }: { site: PublicSite }) {
   const faq = t.raw("faq.items") as { q: string; a: string }[];
   const splitTitle = t("home.splitTitle").split("\n");
   const poster = !settings.heroPosterUrl || settings.heroPosterUrl.endsWith(".svg") ? GATE_PHOTO : settings.heroPosterUrl;
-  const heroVideo = settings.heroVideoUrl;
+  const heroVideo = settings.heroVideoUrl || "/videos/hero.mp4";
   const mid = Math.ceil(companies.length / 2);
   const logoRows = [companies.slice(0, mid), companies.slice(mid)].map((row) => {
     const base = row.length ? row : companies;

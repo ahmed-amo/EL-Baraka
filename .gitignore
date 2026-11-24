@@ -7,10 +7,10 @@ dist
 .env.*.local
 storage
 public/uploads
-public/videos/*.mp4
-!public/videos/hero.web.mp4
+public/videos/hero.master.mp4
+public/videos/hero.tmp.mp4
+public/videos/hero.web.mp4
 public/*.mp4
-!public/videos/hero.web.mp4
 tmp/
 logs/
 *.log
@@ -19,4 +19,3 @@ coverage
 .vercel
 next-env.d.ts
 tsconfig.tsbuildinfo
-

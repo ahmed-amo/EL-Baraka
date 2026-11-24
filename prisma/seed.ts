@@ -128,7 +128,7 @@ async function main() {
   }
 
   const assets = [
-    { key: "hero_video", url: settings.heroVideoUrl || "/videos/hero.web.mp4", type: "VIDEO" as const, label: "Vidéo du hero" },
+    { key: "hero_video", url: settings.heroVideoUrl || "/videos/hero.mp4", type: "VIDEO" as const, label: "Vidéo du hero" },
     { key: "hero_poster", url: settings.heroPosterUrl, type: "IMAGE" as const, label: "Affiche du hero" },
     { key: "escort_photo", url: "/placeholders/escort.svg", type: "IMAGE" as const, label: "Photo escorte" },
     { key: "about_image", url: settings.aboutImageUrl, type: "IMAGE" as const, label: "Image à propos" },

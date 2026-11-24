@@ -1,6 +1,6 @@
 import { unstable_cache } from "next/cache";
 import type { Prisma } from "@prisma/client";
-import { resolveHeroVideoUrl } from "./brand";
+import { HERO_VIDEO } from "./brand";
 import { getPrisma } from "./db";
 import { companySeed, fallbackSite } from "./seed-data";
 import type { Milestone, PublicSite, SiteSettingsData } from "./types";
@@ -48,7 +48,7 @@ async function loadSite(): Promise<PublicSite> {
       employees: settings.employees,
       partners: settings.partners,
       servicesCount: settings.servicesCount,
-      heroVideoUrl: resolveHeroVideoUrl(settings.heroVideoUrl),
+      heroVideoUrl: settings.heroVideoUrl || HERO_VIDEO,
       heroVideoWebmUrl: settings.heroVideoWebmUrl,
       heroPosterUrl: settings.heroPosterUrl,
       aboutImageUrl: settings.aboutImageUrl,

@@ -18,8 +18,7 @@ export const defaultSettings = (): SiteSettingsData => ({
   employees: 500,
   partners: 100,
   servicesCount: 9,
-  // Lightweight web file committed to git. Full master stays local / CDN (too large for GitHub).
-  heroVideoUrl: "/videos/hero.web.mp4",
+  heroVideoUrl: "/videos/hero.mp4",
   heroVideoWebmUrl: "",
   heroPosterUrl: GATE_PHOTO,
   aboutImageUrl: GATE_CLOSE,

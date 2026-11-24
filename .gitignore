@@ -10,6 +10,8 @@ public/uploads
 public/videos/hero.master.mp4
 public/videos/hero.tmp.mp4
 public/videos/hero.web.mp4
+public/videos/*compressed*.mp4
+public/videos/Présentation*
 public/*.mp4
 tmp/
 logs/

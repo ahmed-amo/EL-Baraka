@@ -112,8 +112,8 @@ export async function HomePage({ site }: { site: PublicSite }) {
         <div className="r">
           <div id="ship">
             <Image
-              src="/images/gallery/field-watch.jpg"
-              alt="Agent EL BARAKA CONSEIL en surveillance sur site"
+              src="/images/gallery/IMG_1550.jpg"
+              alt="Équipe EL BARAKA CONSEIL sur le terrain"
               fill
               sizes="42vw"
             />

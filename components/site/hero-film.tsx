@@ -8,6 +8,7 @@ export function HeroFilm({ src, poster, alt }: { src: string; poster: string; al
   const videoRef = useRef<HTMLVideoElement>(null);
   const [reduceMotion, setReduceMotion] = useState(false);
   const [muted, setMuted] = useState(true);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -22,6 +23,31 @@ export function HeroFilm({ src, poster, alt }: { src: string; poster: string; al
     media.addEventListener("change", sync);
     return () => media.removeEventListener("change", sync);
   }, []);
+
+  useEffect(() => {
+    if (!src || reduceMotion) return;
+    const el = videoRef.current;
+    if (!el) return;
+
+    const markReady = () => {
+      setReady(true);
+      void el.play().catch(() => undefined);
+    };
+
+    if (el.readyState >= 2) markReady();
+    else {
+      el.addEventListener("loadeddata", markReady, { once: true });
+      el.addEventListener("canplay", markReady, { once: true });
+    }
+
+    // Kick buffering immediately (preload=auto alone can wait on some browsers).
+    el.load();
+
+    return () => {
+      el.removeEventListener("loadeddata", markReady);
+      el.removeEventListener("canplay", markReady);
+    };
+  }, [src, reduceMotion]);
 
   function toggleMute() {
     const el = videoRef.current;
@@ -42,16 +68,16 @@ export function HeroFilm({ src, poster, alt }: { src: string; poster: string; al
 
   return (
     <div className="hero-media-stack">
+      <link rel="preload" href={src} as="video" type="video/mp4" />
       <div className="hero-card">
         <video
           ref={videoRef}
-          className="hero-card-video"
+          className={`hero-card-video${ready ? " is-ready" : ""}`}
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
-          poster={poster}
+          preload="auto"
           aria-label={alt}
         >
           <source src={src} type="video/mp4" />

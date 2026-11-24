@@ -447,6 +447,13 @@ main { position: relative; z-index: 1; }
   object-position: center;
   background: #000;
 }
+.hero-card-video {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.hero-card-video.is-ready {
+  opacity: 1;
+}
 .hero-card-vignette {
   position: absolute;
   inset: 0;

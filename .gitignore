@@ -8,7 +8,9 @@ dist
 storage
 public/uploads
 public/videos/*.mp4
+!public/videos/hero.web.mp4
 public/*.mp4
+!public/videos/hero.web.mp4
 tmp/
 logs/
 *.log

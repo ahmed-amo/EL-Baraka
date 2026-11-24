@@ -115,7 +115,8 @@ export async function HomePage({ site }: { site: PublicSite }) {
               src="/images/gallery/IMG_1550.jpg"
               alt="Équipe EL BARAKA CONSEIL sur le terrain"
               fill
-              sizes="42vw"
+              sizes="(max-width: 820px) 100vw, 42vw"
+              quality={70}
             />
           </div>
         </div>
@@ -127,7 +128,13 @@ export async function HomePage({ site }: { site: PublicSite }) {
           {services.map((service) => (
             <Link key={service.id} href={`/services/${service.slug}`} className="tile">
               <div className="pic">
-                <Image src={service.imageUrl} alt={service.title} fill sizes="(max-width: 820px) 100vw, 25vw" />
+                <Image
+                  src={service.imageUrl}
+                  alt={service.title}
+                  fill
+                  sizes="(max-width: 820px) 50vw, 25vw"
+                  quality={70}
+                />
               </div>
               <h3>{service.title}</h3>
               <p>{service.shortDescription}</p>
@@ -144,7 +151,15 @@ export async function HomePage({ site }: { site: PublicSite }) {
       <section className="band" id="apropos">
         <RevealTitle className="section-title js-reveal">À propos</RevealTitle>
         <div className="about-grid">
-          <Image src={settings.aboutImageUrl || GATE_PHOTO} alt={t("about.alt")} width={900} height={1100} className="rounded-[24px] object-cover" />
+          <Image
+            src={settings.aboutImageUrl || GATE_PHOTO}
+            alt={t("about.alt")}
+            width={900}
+            height={1100}
+            sizes="(max-width: 820px) 100vw, 40vw"
+            quality={70}
+            className="rounded-[24px] object-cover"
+          />
           <div>
             <p>{t.rich("about.p1", { b: (chunks) => <strong>{chunks}</strong> })}</p>
             <p className="mt-4">{t.rich("about.p2", { b: (chunks) => <strong>{chunks}</strong> })}</p>

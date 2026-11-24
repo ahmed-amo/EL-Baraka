@@ -30,7 +30,14 @@ export function GalleryStrip({
       <div className="gallery-home">
         {visible.map((image) => (
           <Link key={image.id} href="/galerie">
-            <Image src={image.url} alt={image.alt} width={800} height={600} sizes="(max-width: 820px) 100vw, 33vw" />
+            <Image
+              src={image.url}
+              alt={image.alt}
+              width={800}
+              height={600}
+              sizes="(max-width: 820px) 100vw, 33vw"
+              quality={70}
+            />
           </Link>
         ))}
       </div>

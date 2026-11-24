@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import type { GalleryData } from "@/lib/types";
 
@@ -57,8 +58,15 @@ export function GalleryGrid({
       <div className="mt-8 columns-1 gap-3 sm:columns-2 lg:columns-3">
         {visible.map((image, imageIndex) => (
           <button key={image.id} type="button" className="mb-3 block w-full" onClick={() => setIndex(imageIndex)}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={image.url} alt={image.alt} className="w-full rounded-[20px]" />
+            <Image
+              src={image.url}
+              alt={image.alt}
+              width={900}
+              height={700}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              quality={70}
+              className="h-auto w-full rounded-[20px]"
+            />
           </button>
         ))}
       </div>
@@ -70,9 +78,17 @@ export function GalleryGrid({
           <button type="button" className="absolute left-4 top-1/2 border border-white px-4 py-2 text-white rounded-[2px]" onClick={() => setIndex((index! + visible.length - 1) % visible.length)}>
             {labels.prev}
           </button>
-          <figure className="max-h-[80vh] max-w-5xl">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={current.url} alt={current.alt} className="max-h-[75vh] w-auto object-contain" />
+          <figure className="relative max-h-[80vh] max-w-5xl">
+            <Image
+              src={current.url}
+              alt={current.alt}
+              width={1400}
+              height={1000}
+              sizes="90vw"
+              quality={75}
+              priority
+              className="max-h-[75vh] w-auto object-contain"
+            />
             <figcaption className="mt-3 text-center text-sm text-tenue">{current.alt}</figcaption>
           </figure>
           <button type="button" className="absolute right-4 top-1/2 border border-white px-4 py-2 text-white rounded-[2px]" onClick={() => setIndex((index! + 1) % visible.length)}>

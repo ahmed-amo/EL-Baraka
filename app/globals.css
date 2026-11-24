@@ -852,8 +852,10 @@ textarea.pill-area {
   .hero-btn-primary, .hero-btn-secondary { width: 100%; justify-content: center; }
   .hero-card { border-radius: 1.15rem; max-height: none; }
   .band { padding: 64px var(--gut); }
-  .marquee li { height: 120px; }
-  .marquee img { height: 100px; max-width: 240px; }
+  .logo-rows { gap: 12px; margin-top: 36px; }
+  .marquee ul { gap: 48px; }
+  .marquee li { height: 72px; }
+  .marquee img { height: 56px; max-width: 160px; }
   .split { grid-template-columns: 1fr; }
   .split .r { height: 42vh; min-height: 0; }
   #h2 { padding: 52px 0 0 6vw; }

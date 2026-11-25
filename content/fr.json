@@ -8,7 +8,7 @@
     "home": "Accueil",
     "about": "À propos",
     "services": "Services",
-    "gallery": "En savoir plus",
+    "gallery": "Galerie",
     "recruitment": "Recrutement",
     "contact": "Contactez-nous",
     "open": "Ouvrir le menu",
@@ -92,7 +92,7 @@
     ]
   },
   "gallery": {
-    "eyebrow": "En savoir plus",
+    "eyebrow": "Galerie",
     "title": "Nos équipes en situation",
     "intro": "Quelques images de nos interventions sur le terrain et de nos activités de sécurité.",
     "all": "Tout",

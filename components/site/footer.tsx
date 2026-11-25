@@ -53,7 +53,7 @@ export async function Footer({ site }: { site: PublicSite }) {
           </ul>
         </div>
         <div>
-          <h2>{nav("gallery")}</h2>
+          <h2>{t("visit")}</h2>
           <ul>
             <li><Link href="/galerie">{nav("gallery")}</Link></li>
             <li><Link href="/recrutement">{nav("recruitment")}</Link></li>

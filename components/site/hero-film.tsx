@@ -40,9 +40,6 @@ export function HeroFilm({ src, poster, alt }: { src: string; poster: string; al
       el.addEventListener("canplay", markReady, { once: true });
     }
 
-    // Kick buffering immediately (preload=auto alone can wait on some browsers).
-    el.load();
-
     return () => {
       el.removeEventListener("loadeddata", markReady);
       el.removeEventListener("canplay", markReady);
@@ -68,7 +65,6 @@ export function HeroFilm({ src, poster, alt }: { src: string; poster: string; al
 
   return (
     <div className="hero-media-stack">
-      <link rel="preload" href={src} as="video" type="video/mp4" />
       <div className="hero-card">
         <video
           ref={videoRef}
@@ -77,7 +73,7 @@ export function HeroFilm({ src, poster, alt }: { src: string; poster: string; al
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           aria-label={alt}
         >
           <source src={src} type="video/mp4" />
